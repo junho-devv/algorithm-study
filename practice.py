@@ -14,7 +14,16 @@ for x in range(len(array)):
     if array[min_index] > array[y]:
       min_index = y
   array[x], array[min_index] = array[min_index], array[x]
+  print(array)
 
 end_time = time.time()
 
-print("선택정렬 성능 측정 : ", end_time - start_time)
+print("selective sorting : ", end_time - start_time)
+
+start_time = time.time()
+
+array.sort()
+
+end_time = time.time()
+
+print("internal sorting : ", end_time - start_time)
