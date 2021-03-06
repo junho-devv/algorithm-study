@@ -27,3 +27,6 @@ array.sort()
 end_time = time.time()
 
 print("internal sorting : ", end_time - start_time)
+
+for letter in "Junho":
+  print(letter)

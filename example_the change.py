@@ -20,7 +20,6 @@ for x in range(len(coin_types)):
 print(coin_numbers)
 print(count)
 
-# DDDD
 money = int(input("money : "))
 count = 0
 
@@ -29,3 +28,6 @@ for coin in coin_types:
     money %= coin
 
 print(count)
+
+for letter in reversed("Junho"):
+  print(letter)
