@@ -1,2 +1,6 @@
+---
+marp: true
+---
+
 # Algorithm Study
-Pythonìœ¼ë¡œ ì•Œê³ ë¦¬ì¦˜ ê³µë¶€í•˜ê¸°
+PythonÀ¸·Î ¾Ë°í¸®Áò °øºÎÇÏ±â
