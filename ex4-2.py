@@ -1,3 +1,5 @@
+# -*- coding: euc-kr -*-
+
 n = int(input())
 
 count = 0
@@ -10,3 +12,4 @@ for hour in range(n+1):
                 count += 1
 
 print(count)
+print("æ»≥Á«œººø‰")

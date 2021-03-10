@@ -13,7 +13,27 @@ def solution(n):
             answer += 1    
 
     return answer
+def solution002():
+    val = input()
+    row = int(val[1])
+    col = int(ord(val[0])) - int(ord('a')) + 1
+    
+    count = 0
 
-n = int(input())
+    print(row, col)
+    
+    moves = [ (-2, -1), (-2, 1), (-1, -2), (-1, 2), (1, -2), (1, 2), (2, -1), (2, 1) ]
+    
+    for move in moves:
+        nRow = row + move[1]
+        nCol = col + move[0]
+        
+        if nCol > 0 and nRow > 0 and nCol < 9 and nRow < 9:
+            count += 1
+    
+    print(count)
 
-print(solution(n))
+#n = int(input())
+#print(solution(n))
+
+solution002()
