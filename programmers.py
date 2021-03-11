@@ -17,6 +17,10 @@ def solution002():
     val = input()
     row = int(val[1])
     col = int(ord(val[0])) - int(ord('a')) + 1
+    # It stands for "ordinal".
+    # The earliest use of ord that I remember was in Pascal.
+    # There, ord() returned the ordinal value of its argument. 
+    # For characters this was defined as the ASCII code.
     
     count = 0
 
