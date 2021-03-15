@@ -15,6 +15,7 @@ def bfs(x, y):
 
     que = deque()
     que.append((x, y))
+    visit[x][y] = 1
 
     while que:
         x, y = que.popleft()
@@ -31,8 +32,10 @@ def bfs(x, y):
                 continue
 
             if maze[nx][ny] == 1:
-                maze[nx][ny] = maze[x][y] + 1
-                que.append((nx, ny))
+                if visit[nx][ny] == 0:
+                    maze[nx][ny] = maze[x][y] + 1
+                    que.append((nx, ny))
+                    visit[nx][ny] = 1
         
     
     print(maze)
