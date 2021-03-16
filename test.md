@@ -1,2 +1,1 @@
-Algorithm for Python Study. 
-Second.dasdad
+Algorithm for 

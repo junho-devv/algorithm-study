@@ -1,2 +1,5 @@
-# Algorithm Study
-PythonÀ¸·Î ¾Ë°í¸®Áò °øºÎÇÏ±â
+#Algorithm Study 
+
+---
+
+Pythonìœ¼ë¡œ ì½”ë”©í…ŒìŠ¤íŠ¸ ì¤€ë¹„í•˜ê¸°.
