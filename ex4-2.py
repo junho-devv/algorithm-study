@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 n = int(input())
 
 count = 0
