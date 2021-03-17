@@ -2,7 +2,7 @@ array = [7, 5, 9, 6, 3, 1, 2, 4, 8, 0]
 
 for x in range(len(array)):
     miniValue = x
-    for y in range(x+1, len(array)):
+    for y in range(x + 1, len(array)):
         if array[miniValue] > array[y]:
             miniValue = y
 
@@ -14,17 +14,15 @@ array = [7, 5, 9, 6, 3, 1, 2, 4, 8, 0]
 
 for x in range(1, len(array)):
     for y in range(x, 0, -1):
-        if array[y] < array[y-1]:
-            array[y], array[y-1] = array[y-1], array[y]
+        if array[y] < array[y - 1]:
+            array[y], array[y - 1] = array[y - 1], array[y]
         else:
             break
 
 print("삽입정렬 : ", array)
 
-array = [7, 5, 9, 6, 3, 1, 2, 4, 8, 0]
 
-
-def quick_sort(array, start, end):
+def quick_sort(num, start, end):
 
     if start >= end:
         return
@@ -35,21 +33,52 @@ def quick_sort(array, start, end):
 
     while left <= right:
         # 피벗보다 큰 데이터를 찾을 때까지 반복
-        while left <= end and array[left] < array[pivot]:
+        while left <= end and num[left] < num[pivot]:
             left += 1
         # 피벗보다 작은 데이터를 찾을 때까지 반복
-        while right > start and array[right] > array[pivot]:
+        while right > start and num[right] > num[pivot]:
             right -= 1
 
         if left > right:
-            array[right], array[pivot] = array[pivot], array[right]
+            num[right], num[pivot] = num[pivot], num[right]
         else:
-            array[left], array[right] = array[right], array[left]
+            num[left], num[right] = num[right], num[left]
 
-    quick_sort(array, start, right-1)
-    quick_sort(array, right+1, end)
+    quick_sort(num, start, right - 1)
+    quick_sort(num, right + 1, end)
 
 
-quick_sort(array, 0, len(array)-1)
-print("퀵 정렬 : ", array)
+arr = [7, 5, 9, 6, 3, 1, 2, 4, 8, 0]
 
+quick_sort(arr, 0, len(arr) - 1)
+print("퀵 정렬 : ", arr)
+
+
+def quick_sort(inp):
+
+    if len(inp) <= 1:
+        return inp
+
+    pivot = inp[0]
+    tail = inp[1:]
+
+    left_side = [a for a in tail if a <= pivot]
+    right_side = [a for a in tail if a > pivot]
+
+    return quick_sort(left_side) + [pivot] + quick_sort(right_side)
+
+
+arr002 = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8]
+print("퀵 정렬 002 : ", quick_sort(arr002))
+
+arr003 = [7, 5, 9, 0, 3, 1, 6, 2, 9, 1, 4, 8, 0, 5, 2]
+count = [0] * (max(arr003) + 1)
+
+for i in range(len(arr003)):
+    count[arr003[i]] += 1
+
+arr04 = []
+for i in range(len(count)):
+    for j in range(count[i]):
+        arr04.append(i)
+print("계수정렬 : ", arr04)
