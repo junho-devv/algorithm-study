@@ -82,3 +82,15 @@ for i in range(len(count)):
     for j in range(count[i]):
         arr04.append(i)
 print("계수정렬 : ", arr04)
+
+arr005 = [('바나나', 2), ('사과', 5), ('당근', 3)]
+
+
+def setting(data):
+    return data[1]
+
+
+result = sorted(arr005, key=setting)
+
+print(result)
+
