@@ -8,7 +8,7 @@ bList.sort(reverse=True)
 
 for i in range(k):
     if aList[i] >= bList[i]:
-        continue
+        break
     else:
         aList[i], bList[i] = bList[i], aList[i]
 
