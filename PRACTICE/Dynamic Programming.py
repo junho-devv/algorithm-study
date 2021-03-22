@@ -20,7 +20,23 @@ def dynamic_fibonacci(n):
         return d[n]
 
 
-aResult = fibonacci(99)
-print(aResult)
-bResult = dynamic_fibonacci(99)
-print(bResult)
+def for_fibonacci(n):
+    # bottom-up 방식, 상향식
+    table = [0] * n
+
+    table[0] = 1
+    table[1] = 1
+
+    for x in range(2, n):
+        table[x] = table[x-1] + table[x-2]
+
+    return table[n-1]
+
+
+# aResult = fibonacci(99)
+# print(aResult)
+# bResult = dynamic_fibonacci(99)
+# print(bResult)
+
+cResult = for_fibonacci(6)
+print(cResult)
