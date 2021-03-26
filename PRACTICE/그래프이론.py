@@ -1,18 +1,20 @@
-def find_parent_node(parent, x):
+def find_parent_node(p_node_list, c_node):
 
-    if parent[x] != x:
-        return find_parent_node(parent, parent[x])
-    return x
+    if p_node_list[c_node] != c_node:
+        return find_parent_node(p_node_list, p_node_list[c_node])
+
+    return c_node
 
 
-def union_parent(parent, a, b):
-    a = find_parent_node(parent, a)
-    b = find_parent_node(parent, b)
+def union_parent(p_node_list, a_node, b_node):
 
-    if a < b:
-        parent[b] = a
+    a_node = find_parent_node(p_node_list, a_node)
+    b_node = find_parent_node(p_node_list, b_node)
+
+    if a_node < b_node:
+        p_node_list[b_node] = a_node
     else:
-        parent[a] = b
+        p_node_list[a_node] = b_node
 
 
 n_num, e_num = map(int, input().split())
