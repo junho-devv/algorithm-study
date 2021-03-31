@@ -42,3 +42,4 @@ for edge in edges:
         mst_result += ab_cost
 
 print(mst_result)
+print(parents)
