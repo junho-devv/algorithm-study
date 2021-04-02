@@ -13,7 +13,7 @@ while True:
         if m == 0:
             break
         result += first
-        m-= 1
+        m -= 1
     if m == 0:
         break
     result += second
