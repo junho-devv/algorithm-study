@@ -2,13 +2,13 @@ a_num = int(input())
 
 adventurer_stat = list(map(int, input().split()))
 
-adventurer_stat.sort()
+adventurer_stat.sort(reverse=True)
 
 point = 0
 group_num = 0
 rest_num = a_num
 
-while rest_num - adventurer_stat[point] > 0:
+while rest_num > 0:
 
     rest_num -= adventurer_stat[point]
     group_num += 1
@@ -16,4 +16,3 @@ while rest_num - adventurer_stat[point] > 0:
 
 print(group_num)
 
-print("aaaaaaa")
