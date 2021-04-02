@@ -11,8 +11,10 @@ course_list = [[] for _ in range(c_num + 1)]
 cost_list = [0] * (c_num + 1)
 
 for i in range(1, c_num + 1):
+
     a_input = list(map(int, input().split()))
     cost_list[i] = a_input[0]
+
     for j in a_input[1:-1]:
         in_order[i] += 1
         course_list[j].append(i)
