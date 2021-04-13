@@ -1,5 +1,7 @@
 # 외벽 점검
 
+from itertools import permutations
+
 # wall_length = int(input())
 wall_length = 12
 # weak_list = list(map(int, input().split()))
@@ -94,67 +96,38 @@ def solution():
     return answer
 
 
+def solution_002(n, weak, dist):
+    # 길이를 2배로 늘려서 원형을 일자 형태로 변형
+    length = len(weak)
+    for i in range(length):
+        weak.append(weak[i] + n)
+    # 투입할 친구 수의 최솟값을 찾아야 하므로 len(dist) + 1로 초기화
+    # len(dist) + 1 투입할 친구 수의 최대값 + 1
+    answer = len(dist) + 1
+
+    # 0부터 length - 1까지의 위치를 각각 시작점으로 설정
+    for start in range(length):
+        # 친구를 나열하는 모든 경우의 수 각각에 대하여 확인
+        for friends in list(permutations(dist, len(dist))):
+            # 투입할 친구의 수
+            count = 1
+            # 해당 친구가 점검할 수 있는 마지막 위치
+            position = weak[start] + friends[count - 1]
+
+            for index in range(start, start + length):
+
+                if position < weak[index]:
+                    count += 1
+                    if count > len(dist):
+                        break
+
+                    position = weak[index] + friends[count - 1]
+            answer = min(answer, count)
+
+    if answer > len(dist):
+        return -1
+
+    return answer
+
+
 print("answer : ", solution())
-
-
-# def find_start_point():
-#
-#     w_len = len(weak_list)
-#
-#     min_dist = int(1e9)
-#
-#     for i in range(w_len):
-#
-#         i_next = i + w_len - 1
-#
-#         value = abs(weak_list[i] - weak_list[i_next % w_len] - (i_next // w_len) * wall_length)
-#
-#         if min_dist > value:
-#             min_dist = value
-#             start_point = i
-#
-#     return start_point
-
-
-# def solution():
-#
-#     answer = 0
-#
-#     w_len = len(weak_list)
-#
-#     start_point = find_start_point()
-#     print(start_point)
-#     weak_dist = 0
-#
-#     new_list = []
-#
-#     for i in range(w_len):
-#         one = (start_point + i) % w_len
-#         new_list.append(weak_list[one])
-#
-#     for i in range(w_len - 1):
-#         print("1212")
-#         temp = weak_dist
-#
-#         simple_dist = new_list[i + 1] - new_list[i]
-#
-#         if simple_dist < 0:
-#             weak_dist += simple_dist + wall_length
-#         else:
-#             weak_dist += simple_dist
-#
-#         temp_list = [[0] * (len(dist_list))]
-#
-#         if max(dist_list) > weak_dist:
-#             print("Aaa")
-#             continue
-#
-#         for j in range(len(dist_list)):
-#             print("bbbb")
-#             if dist_list[j] > temp and temp_list == 0:
-#                 temp_list[j] += 1
-#                 weak_dist = 0
-#                 answer += 1
-#                 break
-#
-#     return answer
