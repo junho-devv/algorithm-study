@@ -2,13 +2,13 @@ m_size, v_num = map(int, input().split())
 
 v_map = []
 
-temp_map = []
+for i in range(m_size):
+    v_map.append(list(map(int, input().split())))
+
+temp_map = [[0] * m_size for _ in range(m_size)]
 for i in range(m_size):
     for j in range(m_size):
         temp_map[i][j] = v_map[i][j]
-
-for i in range(m_size):
-    v_map.append(list(map(int, input().split())))
 
 v_sec, v_x, v_y = map(int, input().split())
 
@@ -30,15 +30,28 @@ def spread_virus(x, y):
 
 def search_in_depth_first(sec):
 
-    for t in range(1, v_num):
+    if sec == v_sec:
+        return v_map[v_x - 1][v_y - 1]
+
+    sec += 1
+
+    for t in range(1, v_num + 1):
         for x in range(m_size):
             for y in range(m_size):
 
                 if v_map[x][y] == t:
                     spread_virus(x, y)
 
+    for x in range(m_size):
+        for y in range(m_size):
+            v_map[x][y] = temp_map[x][y]
 
-search_in_depth_first(0)
+    return search_in_depth_first(sec)
+
+
+print(search_in_depth_first(0))
 
 for i in range(m_size):
-    print(v_map[i])
+    print(temp_map[i])
+
+
