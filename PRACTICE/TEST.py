@@ -1,10 +1,20 @@
-weak_list = [1, 5, 6, 10]
-start_point = 3
+from collections import deque
 
-new_list = [0] * len(weak_list)
-new_list[-1] = 1
-# for i in range(len(weak_list)):
-#     one = (start_point + i) % len(weak_list)
-#     new_list.append(weak_list[one])
+que = deque()
 
-print(new_list)
+que.append(1)
+que.append(2)
+que.append(3)
+
+que.pop()
+
+b_que = deque()
+
+b_que.append(5)
+b_que.append(10)
+
+que = b_que
+
+b_que.popleft()
+
+print(que)
