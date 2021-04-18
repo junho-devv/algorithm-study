@@ -1,19 +1,14 @@
 # 감시 피하기
-# m_size = int(input())
-# m_list = []
-# for _ in range(m_size):
-#     m_list.append(list(map(str, input().split())))
-m_size = 4
-m_list = [
-    ['S', 'S', 'S', 'T'],
-    ['X', 'X', 'X', 'X'],
-    ['X', 'X', 'X', 'X'],
-    ['T', 'T', 'T', 'X']
-]
+m_size = int(input())
+m_list = []
+for _ in range(m_size):
+    m_list.append(list(map(str, input().split())))
 
 # 우, 상, 좌, 하
 x_view = [1, 0, -1, 0]
 y_view = [0, 1, 0, -1]
+
+answer = "NO"
 
 
 def find_teachers():
@@ -50,17 +45,18 @@ def catch_students(x, y):
 
 def solution(o_num):
 
-    answer = "YES"
+    global answer
 
     if o_num == 3:
+
         t_list = find_teachers()
         for t in t_list:
             x, y = t
             a_result = catch_students(x, y)
             if a_result:
-                print("참")
-                answer = "NO"
-                return answer
+                return
+
+        answer = "YES"
 
         return
 
@@ -68,9 +64,9 @@ def solution(o_num):
         for y in range(m_size):
             if m_list[x][y] == 'X':
                 o_num += 1
-                m_list[x][y] == 'O'
+                m_list[x][y] = 'O'
                 solution(o_num)
-                m_list[x][y] == 'X'
+                m_list[x][y] = 'X'
                 o_num -= 1
 
     return answer
