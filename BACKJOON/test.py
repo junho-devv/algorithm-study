@@ -1,1 +1,1 @@
-print("백준")
+a, b, c = input(), int(input()), int(input())
