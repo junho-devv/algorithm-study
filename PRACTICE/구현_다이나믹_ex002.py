@@ -1,4 +1,4 @@
-u_index = 12
+u_index = int(input())
 
 dynamic_table = [0, 1]
 num_u = 1
@@ -23,4 +23,4 @@ while num_u < u_index:
     else:
         dynamic_table.append(0)
 
-print(dynamic_table)
+print(max(dynamic_table))
