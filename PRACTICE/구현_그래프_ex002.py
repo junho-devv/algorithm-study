@@ -28,19 +28,19 @@ def union_nodes(a_list, a_node, b_node):
         a_list[a_node] = parent_b
 
 
-answer = True
+answer = 0
+
 for d in docking:
+    print(parents)
     gate = find_parent_node(parents, d)
+
     if parents[gate] != 0:
         union_nodes(parents, gate, gate - 1)
+        answer += 1
     else:
-        answer = False
         break
-print(parents)
-if answer:
-    print("YES")
-else:
-    print("NO")
+
+print(answer)
 
 # docking.sort()
 #
