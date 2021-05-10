@@ -1,7 +1,7 @@
 from collections import deque
 
+# 노드의 개수(num_n), 간선의 개수(num_e) 입력하기
 n_num, e_num = map(int, input().split())
-
 # in-degree(진입차수)
 in_degree = [0] * (n_num + 1)
 graph = [[] for _ in range(n_num + 1)]
