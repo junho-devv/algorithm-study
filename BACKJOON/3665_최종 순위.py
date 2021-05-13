@@ -17,7 +17,7 @@ def solution():
                 graph_r[rank_t[i]][rank_t[j]] = True
                 in_degree[rank_t[j]] += 1
         print(in_degree)
-
+    print(num_tc)
     answer = []
     return answer
 
