@@ -32,9 +32,47 @@ def solution():
                 in_degree[a] -= 1
                 in_degree[b] += 1
 
+        que_a = deque()
+        answer = []
 
-    answer = []
-    return answer
+        for i in range(1, num_t + 1):
+            if in_degree[i] == 0:
+                que_a.append(i)
+
+        check_cycle = False
+        check_only = True
+
+        for _ in range(1, num_t + 1):
+
+            if len(que_a) == 0:
+                check_cycle = True
+                break
+            if len(que_a) > 1:
+                check_only = False
+                break
+
+            now = que_a.popleft()
+            answer.append(now)
+
+            for i in range(1, num_t + 1):
+                if graph_r[now][i]:
+                    in_degree[i] -= 1
+
+                    if in_degree[i] == 0:
+                        que_a.append(i)
+
+        if check_cycle:
+            print("IMPOSSIBLE")
+
+        elif not check_only:
+            print("?")
+
+        else:
+            for a in answer:
+                print(a, end=" ")
+            print()
+
+    return
 
 
 print(solution())
