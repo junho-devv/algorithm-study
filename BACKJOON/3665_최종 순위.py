@@ -41,12 +41,13 @@ def solution():
 
         check_cycle = False
         check_only = True
-
+        # 순위대로 정렬되어야 하므로 큐의 원소는 1개로 유지되어야 한다.
         for _ in range(1, num_t + 1):
-
+            # 큐에 원소가 없을 경우에, 사이클이 발생했다고 판명
             if len(que_a) == 0:
                 check_cycle = True
                 break
+            # 큐에 원소가 2개이상 있을 때, 원소들 간의 순위를 매길 수 없다고 판명
             if len(que_a) > 1:
                 check_only = False
                 break
