@@ -26,7 +26,7 @@ def sort_in_topology():
 
         ele = que_a.popleft()
         answer.append(ele)
-
+        # 진입차수가 0인 노드가 없다면 해당 그래프 내에서 사이클이 발생한 것이다.
         for n in graph_e[ele]:
             in_degree[n] -= 1
             if in_degree[n] == 0:
