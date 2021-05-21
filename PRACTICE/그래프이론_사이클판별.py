@@ -25,6 +25,8 @@ for _ in range(e_num):
     a, b = map(int, input().split())
     # 사이클 판별은 무방향 그래프에서 가능하다
     # 두 노드의 부모노드가 같다면 해당 그래프는 사이클이다.
+    # 방향 그래프에서 노드의 방문여부를 표시
+    # 이미 방문된 노드가 다시 한번 방문된다면 사이클발생
     if find_parent_node(parents, a) == find_parent_node(parents, b):
         is_it_cycled = True
         break
