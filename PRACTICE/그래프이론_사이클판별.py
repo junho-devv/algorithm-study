@@ -28,8 +28,6 @@ for _ in range(e_num):
     # 방향 그래프에서 노드의 방문여부를 표시
     # 이미 방문된 노드가 다시 한번 방문된다면 사이클발생
     # 무방향 그래프는 서로소를 이용한 방식이 가능
-    # 공부는 내일 이시간에 See ya!
-    # 오늘은 자낳대 시청하고 내일부터 See ya!
     if find_parent_node(parents, a) == find_parent_node(parents, b):
         is_it_cycled = True
         break
