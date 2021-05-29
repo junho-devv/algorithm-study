@@ -22,7 +22,6 @@ def sort_in_topology():
         if in_degree[i] == 0:
             que_a.append(i)
     # 큐(que_a)가 빌 때까지 반복
-    #
     while que_a:
 
         ele = que_a.popleft()
