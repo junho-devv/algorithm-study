@@ -105,7 +105,7 @@ def solution_002(n, weak, dist):
     # len(dist) + 1 투입할 친구 수의 최대값 + 1
     answer = len(dist) + 1
 
-    # 0부터 length - 1까지의 위치를 각각 시작점으로 설정
+    # 0부터 length-1까지의 위치를 각각 시작점으로 설정
     for start in range(length):
         # 친구를 나열하는 모든 경우의 수 각각에 대하여 확인
         for friends in list(permutations(dist, len(dist))):
