@@ -76,7 +76,7 @@ def rearrange(a_num, a_rank):
 def solution():
     # 테스트 케이스의 개수(num_tc) 입력하기
     num_tc = int(input())
-
+    # 순위 계산 알고리즘
     for tc in range(num_tc):
         # 팀의 수(num_t) 입력하기
         num_t = int(input())
