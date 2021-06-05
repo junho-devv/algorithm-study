@@ -82,7 +82,7 @@ def solution():
         num_t = int(input())
         team_rank = list(map(int, input().split()))
         rearrange(num_t, team_rank)
-
+    #결과 출력하기
     answer = 0
     return answer
 
