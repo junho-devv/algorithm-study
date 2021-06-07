@@ -21,7 +21,7 @@ def solution():
 
     answer = 1
 
-    for i in range(len_x):
+    for i in seq_x:
         if is_it_decimal_number(i):
             answer *= i
 
