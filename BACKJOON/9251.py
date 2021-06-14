@@ -37,5 +37,3 @@ def solution():
 
 
 print(solution())
-# ACAYKP
-# CAPCAK
