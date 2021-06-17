@@ -26,9 +26,6 @@ def solution():
                 else:
                     graph_x[b][a] = graph_x[b - 1][a]
 
-    for i in range(len_b + 1):
-        print(graph_x[i])
-        print()
     # answer = LCS
     answer = graph_x[len_b][len_a]
 
