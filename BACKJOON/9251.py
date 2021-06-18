@@ -1,16 +1,14 @@
 # LCS(Longest Common Subsequence, 최장 공통 부분수열)
-
+# 두 개의 문자열 입력받기
 str_a = input()
 str_b = input()
-
+# 각 문자열의 길이
 len_a = len(str_a)
 len_b = len(str_b)
 
 
 def solution():
-
     graph_x = [[0] * (len_a + 1) for _ in range(len_b + 1)]
-
     for a in range(1, len_a + 1):
         for b in range(1, len_b + 1):
             # 문자열 A의 문자와 문자열 B의 문자가 같을 때,
