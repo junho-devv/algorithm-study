@@ -22,7 +22,7 @@ def solution(a_num, a_list):
         a_list[a_index] = a_sum
 
         answer += a_sum
-    print(answer)
+
     return answer
 
 
@@ -31,4 +31,4 @@ d_list = []
 for _ in range(d_num):
     d_list.append(int(input()))
 
-solution(d_num, d_list)
+print(solution(d_num, d_list))
