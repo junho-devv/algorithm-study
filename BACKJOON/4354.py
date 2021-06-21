@@ -4,7 +4,7 @@ def calculate(a_str, a_len):
     for i in range(1, a_len):
         temp = a_str[0:i]
 
-
+DASDASD
 
 def solution():
     answer = 1
