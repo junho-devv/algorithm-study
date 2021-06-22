@@ -1,10 +1,20 @@
 # 문자열 제곱
-def calculate(a_str, a_len):
+def calculate_failure(a_str):
+    answer = [0] * len(a_str)
+    # 인덱스(idx)는 반복되는 문자열의 마지막 지점을 가리킨다
+    idx = 0
+    # 실패함수 구현
+    for i in range(1, len(a_str)):
 
-    for i in range(1, a_len):
-        temp = a_str[0:i]
+        while idx > 0 and a_str[i] != a_str[idx]:
+            idx = 0
 
-DASDASD
+        if a_str[i] == a_str[idx]:
+            idx += 1
+            answer[i] = idx
+
+    return answer
+
 
 def solution():
     answer = 1
@@ -20,8 +30,12 @@ def solution():
         elif str_s == "":
             answer = 0
         else:
-            calculate(str_s, len_s)
+            table = calculate_failure(str_s)
 
+            if len_s % (len_s - table[-1]) != 0:
+                answer = 1
+            else:
+                answer = len_s // (len_s - table[-1])
         print(answer)
 
     return
