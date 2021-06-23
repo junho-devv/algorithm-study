@@ -7,7 +7,8 @@ def calculate_failure(a_str):
     for i in range(1, len(a_str)):
 
         while idx > 0 and a_str[i] != a_str[idx]:
-            idx = 0
+            # idx = 0
+            idx = answer[idx - 1]
 
         if a_str[i] == a_str[idx]:
             idx += 1
