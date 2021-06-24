@@ -3,7 +3,7 @@ def calculate_failure(a_str):
     answer = [0] * len(a_str)
     # 인덱스(idx)는 반복되는 문자열의 마지막 지점을 가리킨다
     idx = 0
-    # 실패함수 구현
+    # 실패함수(Failure Function) 구현
     for i in range(1, len(a_str)):
 
         while idx > 0 and a_str[i] != a_str[idx]:
