@@ -5,11 +5,11 @@ def calculate_failure(a_str):
     idx = 0
     # 실패함수(Failure Function) 구현
     for i in range(1, len(a_str)):
-
+        # 패턴이 일치하지 않을 때
         while idx > 0 and a_str[i] != a_str[idx]:
             # idx = 0
             idx = answer[idx - 1]
-
+        # 패턴이 일치할 때
         if a_str[i] == a_str[idx]:
             idx += 1
             answer[i] = idx
