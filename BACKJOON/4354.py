@@ -31,7 +31,7 @@ def solution():
         elif str_s == "":
             answer = 0
         else:
-            # 문자열(str_s)의 실패함수를 table에 초기화
+            # 문자열(str_s)의 실패함수를 (table)에 초기화
             table = calculate_failure(str_s)
 
             if len_s % (len_s - table[-1]) != 0:
