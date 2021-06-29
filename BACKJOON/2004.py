@@ -24,12 +24,13 @@ def count_num_of_5(a_num):
 
 
 def solution():
-
     if m == 0:
-        print(0)
+        answer = 0
     else:
         answer = min(count_num_of_2(n) - count_num_of_2(m) - count_num_of_2(n - m),
                      count_num_of_5(n) - count_num_of_5(m) - count_num_of_5(n - m))
+
+    return answer
 
 
 print(solution())
