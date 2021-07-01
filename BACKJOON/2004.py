@@ -27,6 +27,7 @@ def solution():
     if m == 0:
         answer = 0
     else:
+        # 2의 개수와 5의 개수 중 적은 것의 개수로 초기화
         answer = min(count_num_of_2(n) - count_num_of_2(m) - count_num_of_2(n - m),
                      count_num_of_5(n) - count_num_of_5(m) - count_num_of_5(n - m))
 
