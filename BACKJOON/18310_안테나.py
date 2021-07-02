@@ -16,8 +16,8 @@ def solution():
     print(d_list)
 
     answer = d_list[0][1]
-    print(answer)
+
     return answer
 
 
-solution()
+print(solution())
