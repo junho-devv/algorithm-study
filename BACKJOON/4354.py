@@ -18,7 +18,6 @@ def calculate_failure(a_str):
 
 
 def solution():
-    answer = 1
 
     while True:
         # 문자열 s(str_s) 입력받기
