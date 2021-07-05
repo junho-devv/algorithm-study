@@ -1,9 +1,12 @@
+from collections import Counter
+
 num_n = int(input())
 seq_x = []
 
 for _ in range(num_n):
     seq_x.append(int(input()))
 seq_x.sort()
+
 
 def solution():
 
@@ -17,19 +20,12 @@ def solution():
     print(answer_2)
 
     # 최빈값을 출력한다. 여러 개 있을 때에는 최빈값 중 두 번째로 작은 값을 출력한다.
-    seq_temp = [0] * (max(seq_x) + 1)
+    count_seq_x = Counter(seq_x).most_common()
 
-    for i in range(num_n):
-        seq_temp[seq_x[i]] += 1
-    seq_max = []
-    for i in range(len(seq_temp)):
-        if seq_temp[i] == max(seq_temp):
-            seq_max.append(i)
-    if len(seq_max) == 1:
-        answer_3 = seq_max[0]
+    if len(count_seq_x) > 1 and count_seq_x[0][1] == count_seq_x[1][1]:
+        answer_3 = count_seq_x[1][0]
     else:
-        answer_3 = seq_max[1]
-    print(seq_max)
+        answer_3 = count_seq_x[0][0]
     print(answer_3)
 
     # 범위를 출력한다.
