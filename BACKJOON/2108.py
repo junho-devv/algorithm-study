@@ -35,5 +35,20 @@ def solution():
     return
 
 
-solution()
+def simple_function():
+    seq_a = [-1, 0, 1, 1, 3, 7, 10]
+    len_a = len(seq_a)
+    temp = list(set(seq_a))
+    print(seq_a.count(1))
+    print(temp)
 
+    cnt_max = []
+
+    for i in temp:
+        seq_a.count(i)
+
+
+
+
+# solution()
+simple_function()
