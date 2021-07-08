@@ -20,4 +20,13 @@ def solution():
     return
 
 
+def solution2():
+    n = input()
+    str_x = [int(i) for i in n]
+    str_x.sort(reverse=True)
+
+    for i in str_x:
+        print(i, end="")
+
+
 solution()
