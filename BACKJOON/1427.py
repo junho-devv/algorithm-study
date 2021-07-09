@@ -21,6 +21,7 @@ def solution():
 
 
 def solution2():
+    # sys.stdin.readline() 입력 방식은 문자열 x(str_x)에 정수방식으로 삽입하는 과정이 되지 않았음
     n = input()
     str_x = [int(i) for i in n]
     str_x.sort(reverse=True)
