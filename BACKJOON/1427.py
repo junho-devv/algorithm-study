@@ -14,7 +14,7 @@ def solution():
     arr_x.sort(reverse=True)
 
     answer = 0
-
+    # 배열의 각 원소를 각 자리수에 더하기
     for i in range(len(arr_x)):
         answer += arr_x[i] * (10 ** i)
     # 결과(answer) 출력하기
