@@ -1,11 +1,8 @@
-import sys
-
-
 def solution():
     # 단어의 개수(answer)
     answer = 0
     # 문자열(input_x) 입력받기
-    input_x = sys.stdin.readline()
+    input_x = input()
 
     count_x = False
 
