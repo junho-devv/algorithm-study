@@ -30,18 +30,25 @@ def solution():
 
 
 def solution_1():
-    N = int(input())
-    rst = N
+    # 단어의 개수(num_x) 입력받기
+    num_x = int(input())
+    # 그룹 단어의 개수(answer)
+    answer = num_x
 
-    for i in range(0, N):
-        word = input()
-        for j in range(0, len(word) - 1):
-            if word[j] == word[j + 1]:
+    for _ in range(num_x):
+        # 단어(word_x) 입력받기
+        word_x = input()
+
+        for i in range(0, len(word_x) - 1):
+            # 현재 알파벳이 다음 알파벳과 같은 경우에,
+            if word_x[i] == word_x[i + 1]:
                 pass
-            elif word[j] in word[j + 1:]:
-                rst -= 1
+            # 다른 경우 + 현재 알파벳이 이후 알파벳과 중복되는 경우에,
+            elif word_x[i] in word_x[i + 1:]:
+                answer -= 1
                 break
-    print(rst)
+    # 결과(answer) 출력하기
+    print(answer)
 
 
 solution_1()
