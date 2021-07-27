@@ -19,8 +19,10 @@ def solution_2():
     dist_up, dist_down, height_v = map(int, input().split())
     # 높이 V를 올라가는데 걸리는 날짜
     day_v = (height_v - dist_up) / (dist_up - dist_down) + 1
+
     answer = int(day_v) if day_v == int(day_v) else int(day_v) + 1
+    # 결과(answer) 출력하기
     print(answer)
 
 
-solution()
+solution_2()
