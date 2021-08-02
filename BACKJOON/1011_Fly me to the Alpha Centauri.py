@@ -7,14 +7,17 @@ def solution():
         # 현재 위치에서 목표 위치까지 거리(dist_xy)
         dist_xy = pos_y - pos_x
 
-        k = 0
+        count_k = 0
         move_k = 1
+        move_sum = 0
 
-        while dist_xy > move_k:
-            k += 1
-            move_k += k
+        while dist_xy > move_sum:
+            count_k += 1
+            move_sum += move_k
+            if count_k % 2 == 0:
+                move_k += 1
 
-        print(k + 1)
+        print(count_k)
 
 
 solution()
