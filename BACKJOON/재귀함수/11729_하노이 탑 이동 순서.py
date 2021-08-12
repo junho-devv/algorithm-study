@@ -13,6 +13,8 @@ def solution():
     # 원판의 개수(dist_x) 입력받기
     disk_x = int(input())
 
+    print(2 ** disk_x - 1)
+
     move_the_hanoi_tower(disk_x, 1, 2, 3)
 
 
