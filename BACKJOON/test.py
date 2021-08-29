@@ -1,16 +1,6 @@
-def test(para_num):
+num_a = 31
 
-    def track():
-
-        global num_b
-
-        num_b += 1
-
-    num_b = 0
-
-    track()
-
-    print(num_b)
-
-
-test(0)
+if num_a:
+    print("True")
+else:
+    print("False")
