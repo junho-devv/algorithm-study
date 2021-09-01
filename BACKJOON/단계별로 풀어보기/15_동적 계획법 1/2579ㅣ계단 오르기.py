@@ -3,11 +3,11 @@ import sys
 
 num_n = int(sys.stdin.readline())
 
-stair_n = []
-for _ in range(num_n):
-    stair_n.append(int(sys.stdin.readline()))
+stair_n = [0] * 301
+for i in range(num_n):
+    stair_n[i] = int(sys.stdin.readline())
 
-table_dp = [0] * 300
+table_dp = [0] * 301
 table_dp[0] = stair_n[0]
 table_dp[1] = stair_n[0] + stair_n[1]
 table_dp[2] = max(stair_n[1] + stair_n[2], stair_n[0] + stair_n[2])
