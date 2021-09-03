@@ -1,6 +1,2 @@
-num_a = 31
-
-if num_a:
-    print("True")
-else:
-    print("False")
+for i in range(10, 1, -1):
+    print(i)
