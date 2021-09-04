@@ -1,2 +1,3 @@
-for i in range(10, 1, -1):
-    print(i)
+seq_n = [10, -4, 3, 1, 5, 6, -35, 12, 21, -1]
+
+print(sum(seq_n[0:2]))
