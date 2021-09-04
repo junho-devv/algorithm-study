@@ -12,7 +12,4 @@ for a in range(len(str_a)):
         else:
             table_dp[a + 1][b + 1] = max(table_dp[a + 1][b], table_dp[a][b + 1])
 
-# for i in range(len(str_a) + 1):
-#     print(table_dp[i][:len(str_b) + 1])
-
 print(table_dp[len(str_a)][len(str_b)])
