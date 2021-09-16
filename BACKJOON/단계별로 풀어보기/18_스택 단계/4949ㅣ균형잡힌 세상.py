@@ -1,37 +1,32 @@
-import sys
-
-
-input =sys.stdin.readline
-
 while True:
-    in_s = list(input())
+    in_s = input()
 
-    if in_s[0] == '.':
+    if in_s == '.':
         break
 
     brackets = []
+    answer = True
+
     for s in in_s:
-        if s == '(':
+
+        if s == '(' or s == '[':
             brackets.append(s)
+
         elif s == ')':
-            brackets.append(s)
-        elif s == '[':
-            brackets.append(s)
+            if not brackets or brackets[-1] == '[':
+                answer = False
+                break
+            else:
+                brackets.pop()
+
         elif s == ']':
-            brackets.append(s)
+            if not brackets or brackets[-1] == '(':
+                answer = False
+                break
+            else:
+                brackets.pop()
 
-    print(brackets)
-idx_b = 0
-
-def track(para_bracket):
-
-    global idx_b
-
-    if para_bracket == ')' or para_bracket == ']':
-        return False
-
-    elif para_bracket == '(':
-
-
-
-
+    if answer and not brackets:
+        print("yes")
+    else:
+        print("no")

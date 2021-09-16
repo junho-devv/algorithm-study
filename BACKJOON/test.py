@@ -1,3 +1,3 @@
-seq_n = [10, -4, 3, 1, 5, 6, -35, 12, 21, -1]
+seq_n = []
 
-print(sum(seq_n[0:2]))
+print(seq_n[0])
