@@ -1,3 +1,3 @@
-seq_n = []
+seq_n = int(input()).split()
 
-print(seq_n[0])
+print(seq_n)
