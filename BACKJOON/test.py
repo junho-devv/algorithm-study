@@ -1,3 +1,10 @@
-seq_n = int(input()).split()
+import sys
+from collections import deque
 
-print(seq_n)
+
+input = sys.stdin.readline
+
+que_n = deque(input()[1: -2].split(','))
+que_2n = deque()
+print(que_n)
+print(que_2n)
