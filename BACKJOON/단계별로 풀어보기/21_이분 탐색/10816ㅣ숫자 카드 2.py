@@ -14,19 +14,7 @@ def binary_search(para_left, para_right, para_val):
 
     center = (para_left + para_right) // 2
     if list_n[center] == para_val:
-        count_val = 1
-        for i in reversed(range(para_left, center)):
-            if list_n[i] == para_val:
-                count_val += 1
-            else:
-                break
-        for i in range(center + 1, para_right + 1):
-            if list_n[i] == para_val:
-                count_val += 1
-            else:
-                break
-
-        return count_val
+        return dict_n[para_val]
 
     else:
         if list_n[center] > para_val:
@@ -36,5 +24,18 @@ def binary_search(para_left, para_right, para_val):
 
 
 list_n.sort()
+dict_n = dict()
+for n in list_n:
+    try:
+        dict_n[n] += 1
+    except:
+        dict_n[n] = 1
+
 for m in list_m:
     print(binary_search(0, in_n - 1, m), end=' ')
+
+# for m in list_m:
+#     try:
+#         print(dict_n[m], end=' ')
+#     except:
+#         print(0, end=' ')
