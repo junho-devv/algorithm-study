@@ -1,39 +1,39 @@
 import sys
 
-input = sys.stdin.readline
 
-in_k, in_n = map(int, input().split())
-list_k = []
-for _ in range(in_k):
-    list_k.append(int(input()))
+def count_lan(para_list, para_val):
+    num_lan = 0
+    for one in para_list:
+        num_lan += one // para_val
+
+    return num_lan
 
 
-def find(para_left, para_right, para_val):
+def binary_search(para_left, para_right, para_list, para_n):
+    answer = 0
 
-    center = (para_left + para_right) // 2
-    temp_sum = 0
-    for k in list_k:
-        temp_sum += k // center
+    while para_left <= para_right:
+        center = (para_left + para_right) // 2
 
-    if temp_sum == para_val:
-        return center
-    else:
-        if temp_sum < in_n:
-            return find(para_left, center - 1, para_val)
+        if count_lan(para_list, center) < para_n:
+            para_right = center - 1
         else:
-            return find(center + 1, para_right, para_val)
+            answer = max(answer, center)
+            para_left = center + 1
+
+    return answer
 
 
-end = find(0, min(list_k), in_n - 1)
-start = find(0, min(list_k), in_n)
+def solution():
+    input = sys.stdin.readline
 
-answer = 0
-for i in range(start, end):
-    temp_sum = 0
-    for k in list_k:
-        temp_sum += k // i
+    in_k, in_n = map(int, input().split())
+    list_k = []
+    for _ in range(in_k):
+        list_k.append(int(input()))
 
-    if temp_sum == in_n - 1:
-        answer = i - 1
-        print(answer)
-        break
+    answer = binary_search(1, max(list_k), list_k, in_n)
+    print(answer)
+
+
+solution()
