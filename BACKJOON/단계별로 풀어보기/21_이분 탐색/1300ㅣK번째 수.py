@@ -2,20 +2,20 @@ import sys
 
 input = sys.stdin.readline
 
-in_n = int(input())
-in_k = int(input())
+in_n, in_k = int(input()), int(input())
+# k번째 값은 최소 1 * 1 보다 크고 k 보다 작거나 같다
+low_k, high_k = 1, in_k
+answer = 0
+while low_k <= high_k:
+    center_k = (low_k + high_k) // 2
+    cnt_k = 0
+    for n in range(1, in_n + 1):
+        cnt_k += min(center_k // n, in_n)
 
+    if cnt_k >= in_k:
+        high_k = center_k - 1
+        answer = center_k
+    else:
+        low_k = center_k + 1
 
-def solution():
-    list_a = [[row * col for col in range(1, in_n + 1)] for row in range(1, in_n + 1)]
-    list_b = []
-    for row in range(in_n):
-        for col in range(in_n):
-            list_b.append(list_a[row][col])
-    list_b.sort()
-
-    answer = list_b[in_k]
-    print(answer)
-
-
-solution()
+print(answer)
