@@ -1,21 +1,24 @@
 import sys
-from collections import deque
 
 input = sys.stdin.readline
 
 in_n, in_s, in_m = map(int, input().split())
 list_v = list(map(int, input().split()))
 
-que_v = deque([in_s])
+table_dp = [[False for _ in range(in_m + 1)] for _ in range(in_n + 1)]
+table_dp[0][in_s] = True
 for n in range(in_n):
-    temp_list = []
-    while que_v:
-        temp_pop = que_v.popleft()
-        if temp_pop - list_v[n] >= 0:
-            temp_list.append(temp_pop - list_v[n])
-        if temp_pop + list_v[n] <= in_m:
-            temp_list.append(temp_pop + list_v[n])
-    que_v.extend(temp_list)
-    print(que_v)
+    for m in range(in_m + 1):
+        if table_dp[n][m]:
+            if m + list_v[n] <= in_m:
+                table_dp[n + 1][m + list_v[n]] = True
+            if m - list_v[n] >= 0:
+                table_dp[n + 1][m - list_v[n]] = True
 
-print(max(que_v))
+for m in reversed(range(in_m + 1)):
+    if table_dp[in_n][m]:
+        print(m)
+        break
+else:
+    print(-1)
+
