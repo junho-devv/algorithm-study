@@ -16,3 +16,5 @@ while temp_left <= temp_right:
     else:
         print(2)
         temp_right = temp_center - 1
+
+print("0000")
