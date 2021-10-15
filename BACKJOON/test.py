@@ -1,20 +1,8 @@
-import sys
+from itertools import combinations
 
-input = sys.stdin.readline
+list_n = [n for n in range(3)]
 
-list_n = [1, 2, 3, 4]
+combi_n = combinations(list_n, 2)
 
-temp_left = 0
-temp_right = 10000
-while temp_left <= temp_right:
-    temp_center = (temp_left + temp_right) // 2
-
-    if temp_center < 5000:
-        print(1)
-        temp_left = temp_center + 1
-        print("left", temp_left)
-    else:
-        print(2)
-        temp_right = temp_center - 1
-
-print("0000")
+for n in combi_n:
+    print(n[0], n[1])
