@@ -7,4 +7,4 @@ for _ in range(num_tc):
     in_k = int(input())
     list_k = list(map(int, input().split()))
 
-    list_k = int [i + 123]
+

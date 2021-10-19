@@ -12,15 +12,15 @@ def search_in_dfs(para_x, para_y):
     if table_dp[para_x][para_y] != -1:
         return table_dp[para_x][para_y]
     else:
-        temp = 0
+        table_dp[para_x][para_y] = 0
         for d in range(4):
             next_x = para_x + dx[d]
             next_y = para_y + dy[d]
 
             if 0 <= next_x < in_m and 0 <= next_y < in_n:
                 if map_mn[next_x][next_y] < map_mn[para_x][para_y]:
-                    temp += search_in_dfs(next_x, next_y)
-        table_dp[para_x][para_y] = temp
+                    table_dp[para_x][para_y] += search_in_dfs(next_x, next_y)
+        # table_dp[para_x][para_y] = temp
         return table_dp[para_x][para_y]
 
 
