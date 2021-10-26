@@ -14,5 +14,4 @@ for n in range(2, in_n + 1):
             table_dp[i][i + n - 1] = min(table_dp[i][i + n - 1], table_dp[i][k] + table_dp[k + 1][i + n - 1] +
                                          list_matrix[i][0] * list_matrix[k][1] * list_matrix[i + n - 1][1])
 
-for dp in table_dp:
-    print(*dp)
+print(table_dp[1][in_n])
