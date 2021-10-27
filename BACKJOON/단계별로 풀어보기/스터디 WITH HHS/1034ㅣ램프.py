@@ -2,14 +2,14 @@ import sys
 
 
 in_n, in_m = map(int, sys.stdin.readline().split())
-list_nm = [list(sys.stdin.readline().rstrip()) for _ in range(in_n)]
-
+list_nm = [tuple(sys.stdin.readline().rstrip()) for _ in range(in_n)]
 in_k = int(sys.stdin.readline())
 
-temp_nm = [[] for _ in range(in_n)]
-for m in range(in_m):
-    for n in range(in_n):
-        if list_nm[n][m] != '1':
-            temp_nm[n].append(m)
+set_nm = list(set(list_nm))
+max_row = 0
+for nm in set_nm:
+    if nm.count('0') <= in_k and nm.count('0') % 2 == in_k % 2:
+        max_row = max(max_row, list_nm.count(nm))
 
-print(temp_nm)
+print(max_row)
+
