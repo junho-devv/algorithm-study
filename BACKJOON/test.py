@@ -1,4 +1,5 @@
 import sys
 
+isa = True
 
-print(1234)
+print(not isa)
