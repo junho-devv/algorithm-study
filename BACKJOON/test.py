@@ -1,5 +1,9 @@
 import sys
 
-isa = True
+isa = sys.maxsize
+isb = isa + 1
 
-print(not isa)
+if isa < isb:
+    print(1)
+elif isa == isb:
+    print(-1)
