@@ -15,8 +15,7 @@ if __name__ == '__main__':
 
     while start_n != in_n:
         if sum_n[end_n] - sum_n[start_n] >= in_s:
-            if end_n - start_n < min_len:
-                min_len = end_n - start_n
+            min_len = min(min_len, end_n - start_n)
             start_n += 1
         else:
             if end_n < in_n:
