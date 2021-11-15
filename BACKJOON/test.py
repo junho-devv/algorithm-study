@@ -1,9 +1,8 @@
-import sys
+MAX = 30
+a = [0 for _ in range(MAX + 1)]
 
-
-in_tc = int(sys.stdin.readline())
-for _ in range(in_tc):
-    in_n, in_m, in_k = map(int, sys.stdin.readline().split())
-
-    for _ in range(in_k):
-        in_u, in_v, in_c, in_d = map(int, sys.stdin.readline().split())
+for n in range(2, MAX + 1):
+    for m in range(n * n, MAX + 1, n):
+        print("m : ", m)
+        a[m] = 1
+print(a)
