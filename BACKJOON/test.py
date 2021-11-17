@@ -1,8 +1,10 @@
-MAX = 30
-a = [0 for _ in range(MAX + 1)]
+list_a = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+temp_l, temp_r = 1, 10
+while temp_l < temp_r:
+    temp_m = (temp_l + temp_r) // 2
+    if list_a[temp_m] < 11:
+        temp_l = temp_m + 1
+    else:
+        temp_r = temp_m - 1
 
-for n in range(2, MAX + 1):
-    for m in range(n * n, MAX + 1, n):
-        print("m : ", m)
-        a[m] = 1
-print(a)
+print(temp_l, temp_r)
