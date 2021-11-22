@@ -23,9 +23,7 @@ def seek():
         if temp_pos == in_k:
             break
 
-        for way in [-1, 1, temp_pos]:
-            next_pos = temp_pos + way
-
+        for next_pos in [temp_pos - 1, temp_pos + 1, temp_pos * 2]:
             if 0 <= next_pos < int(1e5) + 1:
                 if position_seek[next_pos] == 0:
                     position_seek[next_pos] = position_seek[temp_pos] + 1
