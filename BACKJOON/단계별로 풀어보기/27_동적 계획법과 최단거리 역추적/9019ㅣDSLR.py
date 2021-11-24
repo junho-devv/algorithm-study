@@ -1,7 +1,6 @@
 from collections import deque
 import sys
 
-
 def convert():
     que_n = deque([[in_a, ""]])
     while que_n:
