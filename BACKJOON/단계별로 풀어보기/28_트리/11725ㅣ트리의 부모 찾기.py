@@ -1,11 +1,15 @@
+from collections import deque
 import sys
 
 
-def search(para_node):
-    for node in tree_n[para_node]:
-        if parent_node[node] == 0:
-            parent_node[node] = para_node
-            search(node)
+def search():
+    que_node = deque([1])
+    while que_node:
+        temp_node = que_node.popleft()
+        for node in tree_n[temp_node]:
+            if parent_node[node] == 0:
+                parent_node[node] = temp_node
+                que_node.append(node)
 
 
 if __name__ == '__main__':
@@ -19,7 +23,7 @@ if __name__ == '__main__':
         tree_n[in_n1].append(in_n2)
         tree_n[in_n2].append(in_n1)
 
-    search(1)
+    search()
 
     for i in range(2, in_n + 1):
         print(parent_node[i])
