@@ -33,6 +33,5 @@ if __name__ == '__main__':
     out_answer, out_node = search(out_node)
     print(out_answer)
 
-
 # 트리의 지름 구하기 (증명)
 # https://blog.myungwoo.kr/112
