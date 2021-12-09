@@ -25,7 +25,6 @@ if __name__ == '__main__':
     set_n = [n for n in range(in_n + 1)]
     for _ in range(in_m):
         in_cmd, in_a, in_b = map(int, sys.stdin.readline().split())
-
         if in_cmd == 0:
             union(in_a, in_b)
 
