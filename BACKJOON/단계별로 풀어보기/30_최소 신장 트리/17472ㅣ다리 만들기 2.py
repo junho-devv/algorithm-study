@@ -63,9 +63,11 @@ if __name__ == '__main__':
                     # else:
                     #     temp_min = min(dict_dist[list_isl[_1][2], list_isl[_2][2]][2], temp_dist)
                     #     dict_dist[list_isl[_1][2], list_isl[_2][2]] = [list_isl[_1][2], list_isl[_2][2], temp_min]
+
     # print(dict_dist)
     # dict_dist = sorted(dict_dist.items(), key=lambda _: _[1][2])
     # print(dict_dist)
+
     list_dist = list(set_dist)
     list_dist.sort(key=lambda _: _[2])
     print(list_dist)
