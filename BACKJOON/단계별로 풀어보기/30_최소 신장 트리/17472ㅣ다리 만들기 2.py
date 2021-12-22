@@ -18,6 +18,7 @@ def group(para_row, para_col, para_isl):
 
 
 def find(para_node):
+
     if list_parent[para_node] != para_node:
         list_parent[para_node] = find(list_parent[para_node])
 
