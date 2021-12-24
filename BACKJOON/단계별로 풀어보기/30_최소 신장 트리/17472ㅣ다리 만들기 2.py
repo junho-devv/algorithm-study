@@ -80,38 +80,3 @@ if __name__ == '__main__':
         print(out_min)
     else:
         print(-1)
-
-    # len_isl = len(list_isl)
-    # dict_dist = dict()
-    # set_dist = set()
-    # for _1 in range(len_isl - 1):
-    #     for _2 in range(_1 + 1, len_isl):
-    #         if list_isl[_1][2] != list_isl[_2][2]:
-    #             if list_isl[_1][0] == list_isl[_2][0] or list_isl[_1][1] == list_isl[_2][1]:
-    #                 temp_dist = abs(list_isl[_1][0] - list_isl[_2][0]) + abs(list_isl[_1][1] - list_isl[_2][1]) - 1
-    #                 set_dist.add((list_isl[_1][2], list_isl[_2][2], temp_dist))
-    #
-    #                 # if (list_isl[_1][2], list_isl[_2][2]) not in dict_dist:
-    #                 #     dict_dist[list_isl[_1][2], list_isl[_2][2]] = [list_isl[_1][2], list_isl[_2][2], temp_dist]
-    #                 # else:
-    #                 #     temp_min = min(dict_dist[list_isl[_1][2], list_isl[_2][2]][2], temp_dist)
-    #                 #     dict_dist[list_isl[_1][2], list_isl[_2][2]] = [list_isl[_1][2], list_isl[_2][2], temp_min]
-    #
-    # # print(dict_dist)
-    # # dict_dist = sorted(dict_dist.items(), key=lambda _: _[1][2])
-    # # print(dict_dist)
-
-    # list_dist = list(set_dist)
-    # list_dist.sort(key=lambda _: _[2])
-    # print(list_dist)
-    #
-    # list_parent = [_ for _ in range(len_isl + 1)]
-    # out_min = 0
-    # for _ in list_dist:
-    #     if _[2] >= 2:
-    #         if find(_[0]) != find(_[1]) and (_[0], _[1]) not in dict_dist:
-    #             union(_[0], _[1])
-    #             out_min += _[2]
-    #             dict_dist[_[0], _[1]] = 1
-    #
-    # print(out_min)
