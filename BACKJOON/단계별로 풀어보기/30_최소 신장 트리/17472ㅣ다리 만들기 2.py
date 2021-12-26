@@ -65,7 +65,7 @@ if __name__ == '__main__':
 
     list_edge = []
     search()
-    list_edge.sort(key=lambda _:_[0])
+    list_edge.sort(key=lambda _: _[0])
 
     list_parent = [_ for _ in range(num_isl + 1)]
     out_min, cnt_edge = 0, 0
