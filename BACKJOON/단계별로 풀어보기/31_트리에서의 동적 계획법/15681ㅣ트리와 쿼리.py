@@ -3,8 +3,6 @@ import sys
 
 def count(para_):
     list_cnt[para_] = 1
-    for
-
 
     return
 
