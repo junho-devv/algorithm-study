@@ -4,6 +4,7 @@ import sys
 def count(para_root):
     list_cnt[para_root] = 1
     for p_node in tree_n[para_root]:
+
         if list_cnt[p_node] == 0:
             count(p_node)
             list_cnt[para_root] += list_cnt[p_node]
