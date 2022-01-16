@@ -10,3 +10,5 @@ if __name__ == '__main__':
         in_a, in_b = map(int, sys.stdin.readline().split())
         tree_n[in_a].append(in_b)
         tree_n[in_b].append(in_a)
+
+    let
