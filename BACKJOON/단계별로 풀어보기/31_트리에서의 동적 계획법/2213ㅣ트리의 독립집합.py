@@ -1,7 +1,7 @@
 import sys
 
 
-def search(para_start):
+def search(para_start): # DFS 깊이 우선 탐색
     list_visit[para_start] = True
     # para_start 노드를 포함할 때,
     list_dp[para_start][0] = in_w[para_start]
