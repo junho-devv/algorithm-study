@@ -49,8 +49,9 @@ if __name__ == '__main__':
         tree_n[in_a].append(in_b)
         tree_n[in_b].append(in_a)
 
-    list_visit = [False] * MAX
     list_dp = [[0] * 2 for _ in range(MAX)]
+
+    list_visit = [False] * MAX
     search(1)
     out_1 = max(list_dp[1][0], list_dp[1][1])
     print(out_1)
