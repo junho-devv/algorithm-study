@@ -26,6 +26,8 @@ if __name__ == '__main__':
         graph_n[in_v2].append(in_v1)
 
     list_visit = [False] * MAX
+    # table_dp[N][0] : N번째 노드가 우수 마을인 경우,
+    # table_dp[N][1] : N번째 노드가 우수 마을이 아닌 경우,
     table_dp = [[0, 0] for _ in range(MAX)]
     search(1)
 
