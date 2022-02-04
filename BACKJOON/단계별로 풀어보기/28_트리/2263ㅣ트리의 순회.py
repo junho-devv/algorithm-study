@@ -16,6 +16,8 @@ def preorder_traversal(para_in_start, para_in_end, para_post_start, para_post_en
 
 
 if __name__ == '__main__':
+    sys.setrecursionlimit(10 ** 6)
+
     in_n = int(sys.stdin.readline())
     inorder_traversal = list(map(int, sys.stdin.readline().split()))
     postorder_traversal = list(map(int, sys.stdin.readline().split()))
