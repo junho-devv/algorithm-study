@@ -15,13 +15,16 @@ def search(para_start):
             if visit[node] == -1:
                 visit[node] = visit[temp_node] + cost
                 que_node.append(node)
+
                 if answer[0] < visit[node]:
                     answer = visit[node], node
+
     return answer
 
 
 if __name__ == '__main__':
     in_v = int(sys.stdin.readline())
+
     tree_v = [[] for _ in range(in_v + 1)]
     for _ in range(in_v):
         in_e = list(map(int, sys.stdin.readline().split()))
