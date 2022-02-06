@@ -34,6 +34,7 @@ if __name__ == '__main__':
 
     out_answer, out_node = search(1)
     out_answer, out_node = search(out_node)
+
     print(out_answer)
 
 
