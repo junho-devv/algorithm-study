@@ -28,4 +28,5 @@ if __name__ == '__main__':
 
     out_pre = []
     preorder_traversal(0, in_n - 1, 0, in_n - 1)
+
     print(*out_pre)
