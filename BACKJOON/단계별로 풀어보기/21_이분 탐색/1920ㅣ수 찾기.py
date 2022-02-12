@@ -1,11 +1,10 @@
 import sys
 
-input = sys.stdin.readline
 
-in_n = int(input())
-list_n = list(map(int, input().split()))
-in_m = int(input())
-list_m = list(map(int, input().split()))
+in_n = int(sys.stdin.readline())
+list_n = list(map(int, sys.stdin.readline().split()))
+in_m = int(sys.stdin.readline())
+list_m = list(map(int, sys.stdin.readline().split()))
 
 
 def binary_search(para_left, para_right, para_val):
