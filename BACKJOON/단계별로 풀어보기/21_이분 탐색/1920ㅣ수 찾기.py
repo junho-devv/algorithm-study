@@ -1,12 +1,6 @@
 import sys
 
 
-in_n = int(sys.stdin.readline())
-list_n = list(map(int, sys.stdin.readline().split()))
-in_m = int(sys.stdin.readline())
-list_m = list(map(int, sys.stdin.readline().split()))
-
-
 def binary_search(para_left, para_right, para_val):
     if para_left > para_right:
         return 0
@@ -21,6 +15,13 @@ def binary_search(para_left, para_right, para_val):
             return binary_search(the_mid + 1, para_right, para_val)
 
 
-list_n.sort()
-for m in list_m:
-    print(binary_search(0, in_n - 1, m))
+if __name__ == '__main__':
+    in_n = int(sys.stdin.readline())
+    list_n = list(map(int, sys.stdin.readline().split()))
+    in_m = int(sys.stdin.readline())
+    list_m = list(map(int, sys.stdin.readline().split()))
+
+    list_n.sort()
+
+    for m in list_m:
+        print(binary_search(0, in_n - 1, m))
