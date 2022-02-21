@@ -24,16 +24,12 @@ def binary_search(para_left, para_right, para_list, para_n):
     return answer
 
 
-def solution():
-    input = sys.stdin.readline
+if __name__ == '__main__':
+    in_k, in_n = map(int, sys.stdin.readline().split())
 
-    in_k, in_n = map(int, input().split())
     list_k = []
     for _ in range(in_k):
-        list_k.append(int(input()))
+        list_k.append(int(sys.stdin.readline()))
 
-    answer = binary_search(1, max(list_k), list_k, in_n)
-    print(answer)
-
-
-solution()
+    out_1 = binary_search(1, max(list_k), list_k, in_n)
+    print(out_1)
