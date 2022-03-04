@@ -14,13 +14,11 @@ def solution():
 
     for a in range(0, size_n - 8 + 1):
         for b in range(0, size_m - 8 + 1):
-
             count_b = 0
             count_w = 0
 
             for c in range(0, 8):
                 for d in range(0, 8):
-
                     if black_board[c][d] != board_nm[a + c][b + d]:
                         count_b += 1
 
