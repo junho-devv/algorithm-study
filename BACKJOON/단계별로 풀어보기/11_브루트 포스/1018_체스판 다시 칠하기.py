@@ -1,9 +1,7 @@
 def solution():
-
     size_n, size_m = map(int, input().split())
 
     board_nm = []
-
     for _ in range(size_n):
         board_nm.append(str(input()))
 
