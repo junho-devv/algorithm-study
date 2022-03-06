@@ -1,14 +1,19 @@
+import sys
+
+
 def solution():
-    size_n, size_m = map(int, input().split())
+    MAX = int(1e9)
+
+    size_n, size_m = map(int, sys.stdin.readline().split())
 
     board_nm = []
     for _ in range(size_n):
-        board_nm.append(str(input()))
+        board_nm.append(str(sys.stdin.readline()))
 
     black_board = ['BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB']
     white_board = ['WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW']
 
-    min_nm = int(1e9)
+    min_nm = MAX
 
     for a in range(0, size_n - 8 + 1):
         for b in range(0, size_m - 8 + 1):
