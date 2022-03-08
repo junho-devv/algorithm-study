@@ -2,10 +2,9 @@ import sys
 
 
 def fibonacci(para_n):
-    f_var1 = 0
-    f_var2 = 1
-
     answer = 1
+
+    f_var1, f_var2 = 0, 1
 
     for p_ in range(1, para_n):
         answer = f_var1 + f_var2
