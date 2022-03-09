@@ -17,5 +17,5 @@ def fibonacci(para_n):
 if __name__ == '__main__':
     in_n = int(sys.stdin.readline())
 
-    out_ = fibonacci(in_n)
-    print(out_)
+    out_1 = fibonacci(in_n)
+    print(out_1)
