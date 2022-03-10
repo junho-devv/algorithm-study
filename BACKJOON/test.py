@@ -19,3 +19,6 @@ if __name__ == '__main__':
 
     out_1 = fibonacci(in_n)
     print(out_1)
+
+    out_2 = fibonacci(1)
+    print(out_2)
