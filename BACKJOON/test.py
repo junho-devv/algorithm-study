@@ -14,11 +14,18 @@ def fibonacci(para_n):
     return answer
 
 
+def fibonacci_recursion(para_n):
+    if para_n == 1 or para_n == 2:
+        return 1
+
+    return fibonacci(para_n - 1) + fibonacci_recursion(para_n - 2)
+
+
 if __name__ == '__main__':
     in_n = int(sys.stdin.readline())
 
     out_1 = fibonacci(in_n)
     print(out_1)
 
-    out_2 = fibonacci(1)
+    out_2 = fibonacci_recursion(in_n)
     print(out_2)
