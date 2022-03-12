@@ -18,7 +18,9 @@ def fibonacci_recursion(para_n):
     if para_n == 1 or para_n == 2:
         return 1
 
-    return fibonacci(para_n - 1) + fibonacci_recursion(para_n - 2)
+    answer = fibonacci(para_n - 1) + fibonacci_recursion(para_n - 2)
+
+    return answer
 
 
 if __name__ == '__main__':
