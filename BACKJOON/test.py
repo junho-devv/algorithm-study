@@ -16,7 +16,7 @@ def fibonacci(para_n):
 
 def fibonacci_recursion(para_n):
     if para_n == 1 or para_n == 2:
-        return 1
+        return
 
     answer = fibonacci(para_n - 1) + fibonacci_recursion(para_n - 2)
 
