@@ -1,3 +1,6 @@
+import sys
+
+
 def do_fibonacci(a_num):
 
     if a_num == 0:
@@ -6,11 +9,12 @@ def do_fibonacci(a_num):
     elif a_num == 1:
         return 1
 
-    return do_fibonacci(a_num - 1) + do_fibonacci(a_num - 2)
+    else:
+        return do_fibonacci(a_num - 1) + do_fibonacci(a_num - 2)
 
 
-input_x = int(input())
+if __name__ == '__main__':
+    in_x = int(sys.stdin.readline())
 
-answer = do_fibonacci(input_x)
-
-print(answer)
+    out_1 = do_fibonacci(in_x)
+    print(out_1)
