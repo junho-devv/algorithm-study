@@ -15,6 +15,7 @@ def move_the_hanoi_tower(x_disk, a_pole, b_pole, c_pole):
 def solution():
     in_x = int(sys.stdin.readline())
     print(2 ** in_x - 1)
+
     move_the_hanoi_tower(in_x, 1, 2, 3)
 
 
