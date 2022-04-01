@@ -1,15 +1,15 @@
 import sys
 
 
-def move_the_hanoi_tower(x_disk, a_pole, b_pole, c_pole):
+def move_the_hanoi_tower(para_disk, a_pole, b_pole, c_pole):
 
-    if x_disk == 1:
+    if para_disk == 1:
         print(a_pole, c_pole)
 
     else:
-        move_the_hanoi_tower(x_disk - 1, a_pole, c_pole, b_pole)
+        move_the_hanoi_tower(para_disk - 1, a_pole, c_pole, b_pole)
         print(a_pole, c_pole)
-        move_the_hanoi_tower(x_disk - 1, b_pole, a_pole, c_pole)
+        move_the_hanoi_tower(para_disk - 1, b_pole, a_pole, c_pole)
 
 
 def solution():
