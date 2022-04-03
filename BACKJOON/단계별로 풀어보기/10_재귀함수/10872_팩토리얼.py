@@ -1,3 +1,6 @@
+import sys
+
+
 def do_factorial(a_num):
 
     if a_num == 0:
@@ -6,8 +9,8 @@ def do_factorial(a_num):
     return a_num * do_factorial(a_num - 1)
 
 
-input_x = int(input())
+if __name__ == '__main__':
+    in_x = int(sys.stdin.readline())
 
-answer = do_factorial(input_x)
-
-print(answer)
+    out_1 = do_factorial(in_x)
+    print(out_1)

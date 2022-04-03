@@ -1,33 +1,20 @@
 import sys
 
 
-def fibonacci(para_n):
-    answer = 1
+def solution(array, commands):
+    answer = []
 
-    f_var1, f_var2 = 0, 1
-
-    for p_ in range(1, para_n):
-        answer = f_var1 + f_var2
-        f_var1 = f_var2
-        f_var2 = answer
-
-    return answer
-
-
-def fibonacci_recursion(para_n):
-    if para_n == 1 or para_n == 2:
-        return 1
-
-    answer = fibonacci(para_n - 1) + fibonacci_recursion(para_n - 2)
+    for command in commands:
+        sub_array = array[command[0] - 1:command[1]]
+        sub_array.sort()
+        answer.append(sub_array[command[2] - 1])
 
     return answer
 
 
 if __name__ == '__main__':
-    in_n = int(sys.stdin.readline())
 
-    out_1 = fibonacci(in_n)
-    print(out_1)
+    in_a, in_b = [1, 5, 2, 6, 3, 7, 4], [[2, 5, 3], [4, 4, 1], [1, 7, 3]]
 
-    out_2 = fibonacci_recursion(in_n)
-    print(out_2)
+    print(in_a[0:1])
+    print(solution(in_a, in_b))
