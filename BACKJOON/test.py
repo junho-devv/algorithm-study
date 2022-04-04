@@ -16,5 +16,4 @@ if __name__ == '__main__':
 
     in_a, in_b = [1, 5, 2, 6, 3, 7, 4], [[2, 5, 3], [4, 4, 1], [1, 7, 3]]
 
-    print(in_a[0:1])
-    print(solution(in_a, in_b))
+    solution(in_a, in_b)
