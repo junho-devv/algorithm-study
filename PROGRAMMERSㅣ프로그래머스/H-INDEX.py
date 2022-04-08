@@ -15,9 +15,8 @@ def solution(citations):
 # 내림차순으로 해결하기
 def descending_sort(citations):
     citations.sort(reverse=True)
-    print(citations)
+
     for idx, citation in enumerate(citations):
-        print(idx, citation)
         if idx >= citation:
             return idx
 
