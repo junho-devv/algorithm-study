@@ -1,28 +1,19 @@
+from math import ceil
+
+
 def solution(progresses, speeds):
     answer = []
 
-    stack_r = [0]
-    for i in range(len(progresses)):
-        if (100 - progresses[i]) % speeds[i]:
-            r = (100 - progresses[i]) // speeds[i] + 1
-        else:
-            r = (100 - progresses[i]) // speeds[i]
-        stack_r.append(r)
-    prev_work = 0
-    result = 0
-    while stack_r:
-        now_work = stack_r.pop()
+    list_time = []
+    for progress, speed in zip(progresses, speeds):
+        list_time.append(ceil((100 - progress) / speed))
 
-        if prev_work <= now_work:
-            result += 1
-
-        else:
-            answer.append(result)
-            result = 1
-
-        prev_work = now_work
-
-    answer.reverse()
+    prev_idx = 0
+    for i in range(len(list_time)):
+        if list_time[i] > list_time[prev_idx]:
+            answer.append(i - prev_idx)
+            prev_idx = i
+    answer.append(len(list_time) - prev_idx)
 
     return answer
 
