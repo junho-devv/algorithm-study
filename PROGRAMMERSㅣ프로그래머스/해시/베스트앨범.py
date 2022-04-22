@@ -18,3 +18,6 @@ if __name__ == '__main__':
     in_p = [500, 600, 150, 800, 2500]
 
     solution(in_g, in_p)
+
+    in_a = [["a", 2], ["b", 3], ["c", 10]]
+    print(sum(map(lambda g: g[1], in_a)))
