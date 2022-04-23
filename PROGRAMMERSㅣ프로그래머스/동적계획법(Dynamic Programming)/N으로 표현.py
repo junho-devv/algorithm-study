@@ -1,8 +1,8 @@
 def solution(N, number):
-    set_possible = [0, {N}]
-    if N == number:
-        return 1
-    for case in range(2, 9):
+    set_possible = [0]
+    # if N == number:
+    #     return 1
+    for case in range(1, 9):
         set_case = {int(str(N) * case)}
         for pivot in range(1, case // 2 + 1):
             for x in set_possible[pivot]:
@@ -16,9 +16,9 @@ def solution(N, number):
                         set_case.add(x / y)
                     if x != 0:
                         set_case.add(y / x)
-            if number in set_case:
-                return case
-            set_possible.append(set_case)
+        if number in set_case:
+            return case
+        set_possible.append(set_case)
 
     return -1
 
