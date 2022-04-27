@@ -12,7 +12,8 @@ def solution(money):
     for idx in range(1, len(money)):
         dp_money_2[idx] = max(dp_money_2[idx - 1], dp_money_2[idx - 2] + money[idx])
 
-    answer = max(max(dp_money_1), max(dp_money_2))
+    # answer = max(max(dp_money_1), max(dp_money_2))
+    answer = max(dp_money_1[-2], dp_money_2[-1])
 
     return answer
 
