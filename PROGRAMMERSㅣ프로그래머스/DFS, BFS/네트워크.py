@@ -1,14 +1,31 @@
 def solution(n, computers):
+
+    def DFS(node):
+        visited[node] = True
+
+        for n_com in range(n):
+            if computers[node][n_com] and not visited[n_com]:
+                DFS(n_com)
+
+    visited = [False] * n
     answer = 0
 
-    visited_n = [-1] * n
-    for idx in range(n):
-        if visited_n[idx] == -1:
-            visited_n[idx] =
-        for n_idx in range(idx + 1, n):
-            if visited_n[n_idx] == -1 and computers[idx][n_idx] == 1:
-                visited_n[n_idx] = idx
-    print(visited_n)
+    def BFS(node):
+        from collections import deque
+
+        que_node = deque([node])
+        while que_node:
+            node = que_node.popleft()
+            visited[node] = True
+
+            for n_com in range(n):
+                if computers[node][n_com] and not visited[n_com]:
+                    que_node.append(n_com)
+
+    for com in range(n):
+        if not visited[com]:
+            DFS(com)
+            answer += 1
 
     return answer
 
