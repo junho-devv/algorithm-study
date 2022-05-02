@@ -1,20 +1,27 @@
 def solution(tickets):
-    answer = []
-    visited_ticket = [False] * len(tickets)
 
-    from collections import deque
+    from collections import defaultdict
 
-    que_air = deque([["ICN", ["ICN"]]])
-    while que_air:
-        print(que_air)
-        airport, sequence = que_air.popleft()
+    dict_tickets = defaultdict(list)
+    for departure, arrival in tickets:
+        dict_tickets[departure].append(arrival)
 
-        for idx in range(len(tickets)):
-            if airport == tickets[idx][0] and not visited_ticket[idx]:
-                visited_ticket[idx] = True
+    for idx in dict_tickets:
+        dict_tickets[idx].sort()
 
-                que_air.append([tickets[idx][1], sequence + [tickets[idx][1]]])
+    def DFS():
+        stack_air, path = ["ICN"], []
+        while stack_air:
+            top = stack_air[-1]
+            if top not in dict_tickets or not dict_tickets[top]:
+                path.append(stack_air.pop())
+            else:
+                stack_air.append(dict_tickets[top].pop(0))
 
+        return path[::-1]
+
+    answer = DFS()
+    print(answer)
     return answer
 
 
