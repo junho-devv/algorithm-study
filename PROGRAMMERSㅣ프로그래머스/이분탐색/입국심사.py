@@ -1,19 +1,18 @@
 def solution(n, times):
 
     time_s, time_e = 0, n * times[0]
-    while time_s <= time_e:
+    while time_s < time_e:
         time_m = (time_s + time_e) // 2
 
         temp_cnt = 0
         for time in times:
             temp_cnt += time_m // time
 
-        print(time_m, temp_cnt)
         if temp_cnt >= n:
-            time_e = time_m - 1
+            time_e = time_m
         else:
             time_s = time_m + 1
-    print(time_s, time_m, time_e)
+
     answer = time_s
 
     return answer
