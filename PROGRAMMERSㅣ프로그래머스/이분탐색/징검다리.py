@@ -5,7 +5,7 @@ def solution(distance, rocks, n):
     rocks.sort()
 
     rock_l, rock_r = 0, distance
-    while rock_l < rock_r:
+    while rock_l <= rock_r:
         rock_m = (rock_l + rock_r) // 2
 
         temp_rock, rock_remove = 0, 0
@@ -19,9 +19,8 @@ def solution(distance, rocks, n):
         if rock_remove > n:
             rock_r = rock_m - 1
         else:
+            answer = rock_m
             rock_l = rock_m + 1
-
-    answer = rock_l
 
     return answer
 
