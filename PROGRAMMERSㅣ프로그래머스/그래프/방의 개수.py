@@ -38,7 +38,31 @@ def solution(arrows):
     return answer
 
 
+def solution_1(arrows):
+
+    set_xy = set()
+    set_xy.add((0, 0))
+    set_path = set()
+
+    move_8 = [(0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1), (-1, 0), (-1, 1)]
+    now_xy = (0, 0)
+
+    for arrow in arrows:
+        for _ in range(2):
+            nex_xy = (now_xy[0] + move_8[arrow][0], now_xy[1] + move_8[arrow][1])
+
+            set_xy.add(nex_xy)
+            set_path.add((now_xy, nex_xy))
+            set_path.add((nex_xy, now_xy))
+
+            now_xy = nex_xy
+
+    answer = len(set_path) // 2 - len(set_xy) + 1
+
+    return answer
+
+
 if __name__ == '__main__':
     in_a = [6, 6, 6, 4, 4, 4, 2, 2, 2, 0, 0, 0, 1, 6, 5, 5, 3, 6, 0]
 
-    print(solution(in_a))
+    print(solution_1(in_a))
