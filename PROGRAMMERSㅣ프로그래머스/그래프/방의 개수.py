@@ -57,6 +57,10 @@ def solution_1(arrows):
 
             now_xy = nex_xy
 
+    # 그래프 이론
+    # 수형도란? 사이클(CYCLE)이 없는 그래프
+    # 오일러 공식 : V(꼭지점의 개수) - E(간선의 개수) + F(면의 개수, 외부의 영역 포함) = 2
+    # F = V - E + 2 - 1(외부의 영역 제외)
     answer = len(set_path) // 2 - len(set_xy) + 1
 
     return answer
