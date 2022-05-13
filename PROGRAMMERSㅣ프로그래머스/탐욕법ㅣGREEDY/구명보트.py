@@ -6,7 +6,6 @@ def solution(people, limit):
     answer = 0
 
     while idx_l <= idx_r:
-
         answer += 1
 
         if people[idx_l] + people[idx_r] <= limit:
