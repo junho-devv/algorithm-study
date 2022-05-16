@@ -6,6 +6,7 @@ def solution(routes):
     answer = 0
 
     for route in routes:
+
         if temp_camera < route[0]:
             answer += 1
             temp_camera = route[1]
