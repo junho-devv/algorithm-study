@@ -1,33 +1,25 @@
 def solution(jobs):
 
+    sorted_jobs = sorted([(job[1], job[0]) for job in jobs], reverse=True, key=lambda e: (e[1], e[0]))
+
     import heapq
 
-    heap_jobs = []
+    que_jobs = []
+    heapq.heappush(que_jobs, sorted_jobs.pop())
 
-    answer = 0
-    time_s, time_e = -1, 0
-    cnt_work = 0
+    now_time, total_time = 0, 0
 
-    while cnt_work < len(jobs):
+    while que_jobs:
+        temp_t, temp_s = heapq.heappop(que_jobs)
+        now_time = max(now_time + temp_t, temp_s + temp_t)
+        total_time += now_time - temp_s
 
-        for job in jobs:
-            if time_s < job[0] <= time_e:
-                heapq.heappush(heap_jobs, [job[1], job[0]])
+        while sorted_jobs and sorted_jobs[-1][1] <= now_time:
+            heapq.heappush(que_jobs, sorted_jobs.pop())
+        if sorted_jobs and not que_jobs:
+            heapq.heappush(que_jobs, sorted_jobs.pop())
 
-        if len(heap_jobs) > 0:
-            temp_work = heapq.heappop(heap_jobs)
-
-            time_s = time_e
-            time_e += temp_work[0]
-
-            cnt_work += 1
-
-            answer += time_e - temp_work[1]
-
-        else:
-            time_s += 1
-
-    answer //= len(jobs)
+    answer = total_time // len(jobs)
 
     return answer
 
