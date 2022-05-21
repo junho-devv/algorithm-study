@@ -32,8 +32,32 @@ def solution(operations):
     return answer
 
 
+def solution_1(operations):
+
+    import heapq
+
+    heap_num = []
+
+    for operation in operations:
+        op_1, op_2 = operation.split()
+        print(heap_num)
+        if op_1 == "I":
+            heapq.heappush(heap_num, int(op_2))
+
+        else:
+            if not heap_num:
+                pass
+
+            elif op_2 == "1":
+                heap_num.pop()
+
+            elif op_2 == "-1":
+                heapq.heappop(heap_num)
+
+
+
 if __name__ == '__main__':
 
     in_o = 	["I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"]
 
-    print(solution(in_o))
+    print(solution_1(in_o))
