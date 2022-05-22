@@ -50,10 +50,10 @@ def solution_1(operations):
 
             elif op_2 == "1":
                 heap_num.pop()
+                heapq.heapify(heap_num)
 
             elif op_2 == "-1":
                 heapq.heappop(heap_num)
-
 
 
 if __name__ == '__main__':
