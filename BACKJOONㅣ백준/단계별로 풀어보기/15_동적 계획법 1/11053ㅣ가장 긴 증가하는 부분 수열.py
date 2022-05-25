@@ -1,13 +1,24 @@
-length_n = int(input())
-seq_n = list(map(int, input().split()))
+def solution(len_n, seq_n):
 
-table_dp = [0] * (int(1e3) + 1)
+    dynamic_table = [0] * (int(1e3) + 1)
 
-for a in range(length_n):
-    for b in range(a):
-        if seq_n[a] > seq_n[b] and table_dp[a] < table_dp[b]:
-            table_dp[a] = table_dp[b]
+    for l in range(len_n):
+        for idx in range(l):
+            if seq_n[l] > seq_n[idx] and dynamic_table[l] < dynamic_table[idx]:
+                dynamic_table[l] = dynamic_table[idx]
 
-    table_dp[a] += 1
+        dynamic_table[l] += 1
 
-print(max(table_dp))
+    answer = max(dynamic_table)
+
+    return answer
+
+
+if __name__ == "__main__":
+
+    import sys
+
+    in_l = int(sys.stdin.readline())
+    in_n = list(map(int, sys.stdin.readline().split()))
+
+    print(solution(in_l, in_n))
