@@ -10,7 +10,6 @@ def solution(len_n, seq_n):
         dynamic_table[l] += 1
 
     answer = max(dynamic_table)
-
     return answer
 
 
