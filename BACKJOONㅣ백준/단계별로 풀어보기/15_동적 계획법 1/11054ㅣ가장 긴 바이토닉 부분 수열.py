@@ -1,4 +1,4 @@
-def solution():
+def solution(num_n, seq_n):
 
     dynamic_table_1 = [0] * (int(1e3) + 1)
     dynamic_table_2 = [0] * (int(1e3) + 1)
@@ -16,7 +16,6 @@ def solution():
         dynamic_table_2[x] += 1
 
     sum_dynamic_table = [0] * (int(1e3) + 1)
-    []
 
     for i in range(num_n):
         sum_dynamic_table[i] = dynamic_table_1[i] + dynamic_table_2[i] - 1
@@ -32,3 +31,4 @@ if __name__ == "__main__":
     num_n = int(sys.stdin.readline())
     seq_n = list(map(int, sys.stdin.readline().split()))
 
+    print(solution(num_n, seq_n))
