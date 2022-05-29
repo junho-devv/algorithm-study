@@ -31,4 +31,4 @@ if __name__ == "__main__":
     num_n = int(sys.stdin.readline())
     seq_n = list(map(int, sys.stdin.readline().split()))
 
-    # print(solution(num_n, seq_n))
+    print(solution(num_n, seq_n))
