@@ -24,5 +24,3 @@ if __name__ == "__main__":
     list_item = [[0, 0]] + [list(map(int, sys.stdin.readline().split())) for _ in range(in_n)]
 
     print(solution(in_n, in_k))
-
-
