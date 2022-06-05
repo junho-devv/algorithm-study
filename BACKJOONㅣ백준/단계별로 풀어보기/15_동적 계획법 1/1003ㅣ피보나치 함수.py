@@ -8,9 +8,9 @@ if __name__ == "__main__":
 
         input_n = int(sys.stdin.readline())
 
-        call_0, call_1 = 1, 0
+        call_pre, call_now = 1, 0
 
         for _ in range(input_n):
-            call_0, call_1 = call_1, call_0 + call_1
+            call_pre, call_now = call_now, call_pre + call_now
 
-        print(call_0, call_1)
+        print(call_pre, call_now)
