@@ -1,18 +1,15 @@
-def solution():
+def solution(N):
 
     dynamic_table = [0] * (int(1e6) + 1)
-    table_dp = [0] * (int(1e6) + 1)
+    dynamic_table[1] = 1
+    dynamic_table[2] = 2
 
-    table_dp[1], table_dp[2] = 1, 2
+    for i in range(3, N + 1):
+        dynamic_table[i] = (dynamic_table[i - 1] + dynamic_table[i - 2]) % 15746
 
-    for i in range(3, input_n + 1):
-        table_dp[i] = (table_dp[i - 1] + table_dp[i - 2]) % 15746
-
-    print(table_dp[input_n])
-
-
-    answer = 0
+    answer = dynamic_table[N]
     return answer
+
 
 if __name__ == "__main__":
 
