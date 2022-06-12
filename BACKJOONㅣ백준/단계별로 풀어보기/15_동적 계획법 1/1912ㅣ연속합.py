@@ -1,13 +1,22 @@
-num_n = int(input())
-seq_n = list(map(int, input().split()))
+def solution(N, sequence):
 
-table_dp = [0] * (int(1e5) + 1)
+    dynamic_table = [0] * (10 ** 5 + 1)
 
-for n in range(num_n):
+    for i in range(N):
+        if dynamic_table[i] < 0:
+            dynamic_table[i + 1] = sequence[i]
+        else:
+            dynamic_table[i + 1] = dynamic_table[i] + sequence[i]
 
-    if table_dp[n] < 0:
-        table_dp[n + 1] = seq_n[n]
-    else:
-        table_dp[n + 1] = table_dp[n] + seq_n[n]
+    answer = max(dynamic_table[1: N + 1])
+    return answer
 
-print(max(table_dp[1:num_n + 1]))
+
+if __name__ == "__main__":
+
+    import sys
+
+    in_n = int(sys.stdin.readline())
+    in_s = list(map(int, sys.stdin.readline().split()))
+
+    print(solution(in_n, in_s))
