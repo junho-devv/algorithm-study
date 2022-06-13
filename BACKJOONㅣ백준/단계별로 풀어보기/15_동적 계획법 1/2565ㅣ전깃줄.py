@@ -1,20 +1,22 @@
-num_n = int(input())
-list_n = [0] * 501
+def solution(N, wires):
 
-max_n = 0
-for n in range(num_n):
-    a, b = map(int, input().split())
+    dynamic_table = [1] * 501
 
-    if b > max_n:
-        max_n = b
+    for idx_1 in range(N):
+        for idx_2 in range(idx_1):
+            if wires[idx_1] > wires[idx_2] and dynamic_table[idx_1] < dynamic_table[idx_2] + 1:
+                dynamic_table[idx_1] = dynamic_table[idx_2] + 1
 
-    list_n[a] = b
+    answer = N - max(dynamic_table)
+    return answer
 
-table_dp = [0] * 501
-for x in range(1, max_n + 1):
-    for y in range(1, x):
-        if list_n[x] >= list_n[y] > 0 and table_dp[x] <= table_dp[y]:
-            table_dp[x] = table_dp[y]
-    table_dp[x] += 1
 
-print(num_n - max(table_dp))
+if __name__ == "__main__":
+
+    import sys
+
+    in_n = int(sys.stdin.readline())
+
+    list_w = [list(map(int, sys.stdin.readline().split())) for _ in range(in_n)]
+
+    print(solution(in_n, list_w))
