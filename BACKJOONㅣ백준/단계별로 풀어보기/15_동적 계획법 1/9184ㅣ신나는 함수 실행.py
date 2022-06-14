@@ -1,33 +1,39 @@
-def w(para_a, para_b, para_c):
+def solution(A, B, C):
 
-    if para_a <= 0 or para_b <= 0 or para_c <= 0:
-        return 1
+    def w(a, b, c):
 
-    elif para_a > 20 or para_b > 20 or para_c > 20:
-        return w(20, 20, 20)
+        if a <= 0 or b <= 0 or c <= 0:
+            return 1
 
-    elif table_dp[para_a][para_b][para_c]:
-        return table_dp[para_a][para_b][para_c]
+        elif a > 20 or b > 20 or c > 20:
+            return w(20, 20, 20)
 
-    elif para_a < para_b < para_c:
-        table_dp[para_a][para_b][para_c] = \
-            w(para_a, para_b, para_c - 1) + w(para_a, para_b - 1, para_c - 1) - w(para_a, para_b - 1, para_c)
-        return table_dp[para_a][para_b][para_c]
+        elif dynamic_table[a][b][c]:
+            return dynamic_table[a][b][c]
 
-    else:
-        table_dp[para_a][para_b][para_c] = \
-            w(para_a - 1, para_b, para_c) + w(para_a - 1, para_b - 1, para_c) + w(para_a - 1, para_b, para_c - 1) \
-            - w(para_a - 1, para_b - 1, para_c - 1)
-        return table_dp[para_a][para_b][para_c]
+        elif a < b < c:
+            dynamic_table[a][b][c] = w(a, b, c - 1) + w(a, b - 1, c - 1) - w(a, b - 1, c)
+            return dynamic_table[a][b][c]
+
+        else:
+            dynamic_table[a][b][c] = w(a - 1, b, c) + w(a - 1, b - 1, c) + w(a - 1, b, c - 1) - w(a - 1, b - 1, c - 1)
+            return dynamic_table[a][b][c]
+
+    answer = f"w({A}, {B}, {C}) = {w(A, B, C)}"
+    return answer
 
 
-table_dp = [[[0] * 21 for _ in range(21)] for _ in range(21)]
+if __name__ == "__main__":
 
-while True:
+    import sys
 
-    input_a, input_b, input_c = map(int, input().split())
+    dynamic_table = [[[0] * 21 for _ in range(21)] for _ in range(21)]
 
-    if input_a == input_b == input_c == -1:
-        break
+    while True:
 
-    print(f"w({input_a}, {input_b}, {input_c}) = {w(input_a, input_b, input_c)}")
+        in_a, in_b, in_c = map(int, sys.stdin.readline().split())
+
+        if in_a == in_b == in_c == -1:
+            break
+
+        print(solution(in_a, in_b, in_c))
