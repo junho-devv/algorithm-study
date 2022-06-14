@@ -1,18 +1,23 @@
-import sys
+def solution(N, scores):
+
+    dynamic_table = [0] * 301
+
+    dynamic_table[1] = scores[1]
+    dynamic_table[2] = scores[1] + scores[2]
+
+    for idx in range(3, N + 1):
+        dynamic_table[idx] = max(dynamic_table[idx - 3] + scores[idx - 1] + scores[idx],
+                                 dynamic_table[idx - 2] + scores[idx])
+
+    answer = dynamic_table[N]
+    return answer
 
 
-num_n = int(sys.stdin.readline())
+if __name__ == "__main__":
 
-stair_n = [0] * 301
-for i in range(num_n):
-    stair_n[i] = int(sys.stdin.readline())
+    import sys
 
-table_dp = [0] * 301
-table_dp[0] = stair_n[0]
-table_dp[1] = stair_n[0] + stair_n[1]
-table_dp[2] = max(stair_n[1] + stair_n[2], stair_n[0] + stair_n[2])
+    in_n = int(sys.stdin.readline())
+    in_s = [0] + [int(sys.stdin.readline()) for _ in range(in_n)]
 
-for i in range(3, num_n):
-    table_dp[i] = max(table_dp[i - 3] + stair_n[i - 1] + stair_n[i], table_dp[i - 2] + stair_n[i])
-
-print(table_dp[num_n - 1])
+    print(solution(in_n, in_s))
