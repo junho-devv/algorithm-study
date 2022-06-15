@@ -1,15 +1,24 @@
-num_tc = int(input())
+def solution(N):
 
-for _ in range(num_tc):
-
-    input_n = int(input())
-
-    table_dp = [0] * (int(1e2) + 1)
+    dynamic_table = [0] * (10 ** 2 + 1)
 
     for i in range(1, 4):
-        table_dp[i] = 1
+        dynamic_table[i] = 1
 
-    for i in range(4, input_n + 1):
-        table_dp[i] = table_dp[i - 2] + table_dp[i - 3]
+    for idx in range(4, N + 1):
+        dynamic_table[idx] = dynamic_table[idx - 2] + dynamic_table[idx - 3]
 
-    print(table_dp[input_n])
+    answer = dynamic_table[N]
+    return answer
+
+
+if __name__ == "__main__":
+
+    import sys
+
+    in_tc = int(sys.stdin.readline())
+
+    for _ in range(in_tc):
+        in_n = int(sys.stdin.readline())
+
+        print(solution(in_n))
