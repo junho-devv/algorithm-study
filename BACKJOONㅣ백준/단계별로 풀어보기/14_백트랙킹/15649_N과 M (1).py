@@ -1,42 +1,34 @@
-from itertools import permutations
+def solve(depth, n, m, visited, out):
+
+    if depth == m:
+        print(' '.join(map(str, out)))
+        return
+
+    for idx in range(n):
+
+        if not visited[idx]:
+            visited[idx] = True
+            out.append(idx + 1)
+
+            solve(depth + 1, n, m, visited, out)
+
+            visited[idx] = False
+            out.pop()
 
 
-def solution():
-    # end_x, num_x = map(int, input().split())
-    #
-    # list_x = [x for x in range(1, end_x + 1)]
-    #
-    # list_y = list(permutations(list_x, num_x))
-    #
-    # for y in list_y:
-    #     for i in y:
-    #         print(i, end=' ')
-    #     print()
+# DFS/백트랙킹 이용한 풀이법
+def solution(n, m):
 
-    input_n, input_m = map(int, input().split())
+    visited = [False] * n
+    answer = []
+
+    solve(0, n, m, visited, answer)
 
 
-def solution_2():
-    input_n, input_m = map(int, input().split())
-    list_visited = [False] * input_n
-    out = []
+if __name__ == "__main__":
 
-    def solve(para_depth, para_n, para_m):
+    import sys
 
-        if para_depth == para_m:
-            print(' '.join(map(str, out)))
-            return
+    in_n, in_m = map(int, sys.stdin.readline().split())
 
-        for i in range(input_n):
-
-            if not list_visited[i]:
-                list_visited[i] = True
-                out.append(i + 1)
-                solve(para_depth + 1, input_n, input_m)
-                list_visited[i] = False
-                out.pop()
-
-    solve(0, input_n, input_m)
-
-
-solution_2()
+    solution(in_n, in_m)
