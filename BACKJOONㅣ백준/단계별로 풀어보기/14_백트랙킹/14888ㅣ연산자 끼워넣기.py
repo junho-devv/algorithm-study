@@ -19,7 +19,7 @@ def solution(n, sequence, operators):
             depth_first_search(depth + 1, result * sequence[depth], op_0, op_1, op_2 - 1, op_3)
 
         if op_3:
-            depth_first_search(depth + 1, result // sequence[depth], op_0, op_1, op_2, op_3 - 1)
+            depth_first_search(depth + 1, int(result / sequence[depth]), op_0, op_1, op_2, op_3 - 1)
 
     maximum = int(1e9) * -1
     minimum = int(1e9)
