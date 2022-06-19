@@ -1,32 +1,33 @@
-def track(para_n, para_result):
-    global max_n, min_n
+def solution(n, sequence, operators):
 
-    if para_n == num_N - 1:
+    def depth_first_search(depth, result, op_0, op_1, op_2, op_3):
 
-        max_n = max(max_n, para_result)
-        min_n = min(min_n, para_result)
+        nonlocal maximum, minimum
 
-    else:
-        for x in range(len(temp)):
-            if not temp_visited[x]:
-                temp_visited[x] = True
-                temp_result = para_result
-                if temp[x] == 0:
-                    para_result += list_N[para_n + 1]
-                elif temp[x] == 1:
-                    para_result -= list_N[para_n + 1]
-                elif temp[x] == 2:
-                    para_result *= list_N[para_n + 1]
-                else:
-                    if para_result < 0:
-                        para_result = (-1) * para_result // list_N[para_n + 1]
-                        para_result *= -1
-                    else:
-                        para_result //= list_N[para_n + 1]
+        if depth == n:
+            maximum = max(maximum, result)
+            minimum = min(minimum, result)
+            return
 
-                track(para_n + 1, para_result)
-                para_result = temp_result
-                temp_visited[x] = False
+        if op_0:
+            depth_first_search(depth + 1, result + sequence[depth], op_0 - 1, op_1, op_2, op_3)
+
+        if op_1:
+            depth_first_search(depth + 1, result - sequence[depth], op_0, op_1 - 1, op_2, op_3)
+
+        if op_2:
+            depth_first_search(depth + 1, result * sequence[depth], op_0, op_1, op_2 - 1, op_3)
+
+        if op_3:
+            depth_first_search(depth + 1, result // sequence[depth], op_0, op_1, op_2, op_3 - 1)
+
+    maximum = int(1e9) * -1
+    minimum = int(1e9)
+
+    depth_first_search(1, sequence[0], operators[0], operators[1], operators[2], operators[3])
+
+    print(maximum)
+    print(minimum)
 
 
 if __name__ == "__main__":
@@ -37,17 +38,4 @@ if __name__ == "__main__":
     in_a = list(map(int, sys.stdin.readline().split()))
     in_o = list(map(int, sys.stdin.readline().split()))
 
-    temp = []
-    for i in range(4):
-
-        for op in range(list_op[i]):
-            temp.append(i)
-
-    temp_visited = [False] * len(temp)
-
-    max_n, min_n = -int(1e9), int(1e9)
-
-track(0, list_N[0])
-
-print(max_n)
-print(min_n)
+    solution(in_n, in_a, in_o)
