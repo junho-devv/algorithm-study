@@ -1,18 +1,3 @@
-num_N = int(input())
-list_N = list(map(int, input().split()))
-
-list_op = list(map(int, input().split()))
-temp = []
-for i in range(4):
-
-    for op in range(list_op[i]):
-        temp.append(i)
-
-temp_visited = [False] * len(temp)
-
-max_n, min_n = -int(1e9), int(1e9)
-
-
 def track(para_n, para_result):
     global max_n, min_n
 
@@ -43,6 +28,24 @@ def track(para_n, para_result):
                 para_result = temp_result
                 temp_visited[x] = False
 
+
+if __name__ == "__main__":
+
+    import sys
+
+    in_n = int(sys.stdin.readline())
+    in_a = list(map(int, sys.stdin.readline().split()))
+    in_o = list(map(int, sys.stdin.readline().split()))
+
+    temp = []
+    for i in range(4):
+
+        for op in range(list_op[i]):
+            temp.append(i)
+
+    temp_visited = [False] * len(temp)
+
+    max_n, min_n = -int(1e9), int(1e9)
 
 track(0, list_N[0])
 
