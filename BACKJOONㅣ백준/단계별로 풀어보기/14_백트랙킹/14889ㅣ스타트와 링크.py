@@ -1,37 +1,41 @@
-from itertools import combinations
+def solution(n, stats):
+
+    def depth_first_search(depth, index):
+
+        nonlocal minimum_gap
+
+        if depth == n // 2:
+            team_s, team_l = 0, 0
+            for idx_1 in range(n):
+                for idx_2 in range(n):
+                    if visit[idx_1] and visit[idx_2]:
+                        team_s += stats[idx_1][idx_2]
+                    elif not visit[idx_1] and not visit[idx_2]:
+                        team_l += stats[idx_1][idx_2]
+
+            minimum_gap = min(minimum_gap, abs(team_s - team_l))
+            return
+
+        for idx in range(index, n):
+            if not visit[idx]:
+                visit[idx] = True
+                depth_first_search(depth + 1, index + 1)
+                visit[idx] = False
+
+    visit = [False for _ in range(n)]
+    minimum_gap = int(1e9)
+
+    depth_first_search(0, 0)
+
+    answer = minimum_gap
+    return answer
 
 
-input_n = int(input())
+if __name__ == "__main__":
 
-list_stat = [list(map(int, input().split())) for _ in range(input_n)]
+    import sys
 
-team_member = [n for n in range(input_n)]
+    in_n = int(sys.stdin.readline())
+    in_s = [list(map(int, sys.stdin.readline().split())) for _ in range(in_n)]
 
-team_start = []
-team_link = []
-
-min_gap = int(1e9)
-
-possible_team = []
-for team in combinations(team_member, input_n // 2):
-    possible_team.append(team)
-
-for team in range(len(possible_team) // 2):
-
-    team_start = possible_team[team]
-    stat_start = 0
-    for n in range(input_n // 2):
-        member = team_start[n]
-        for start in team_start:
-            stat_start += list_stat[member][start]
-
-    team_link = possible_team[-1 - team]
-    stat_link = 0
-    for n in range(input_n // 2):
-        member = team_link[n]
-        for link in team_link:
-            stat_link += list_stat[member][link]
-
-    min_gap = min(min_gap, abs(stat_start - stat_link))
-
-print(min_gap)
+    print(solution(in_n, in_s))

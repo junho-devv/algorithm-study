@@ -23,4 +23,6 @@ def solution():
     search(0, input_n, input_m, 0)
 
 
-solution()
+if __name__ == "__main__":
+
+    solution()
