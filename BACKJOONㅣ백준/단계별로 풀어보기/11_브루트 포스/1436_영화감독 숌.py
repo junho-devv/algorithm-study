@@ -1,12 +1,10 @@
-def solution():
-    # 숫자 N(input_n) 입력받기
-    input_n = int(input())
+def solution(n):
 
     int_n = 666
 
     count_n = 0
 
-    while count_n != input_n:
+    while count_n != n:
 
         if '666' in str(int_n):
             count_n += 1
@@ -14,8 +12,13 @@ def solution():
         int_n += 1
 
     answer = int_n - 1
+    return answer
 
-    print(answer)
 
+if __name__ == "__main__":
 
-solution()
+    import sys
+
+    in_n = int(sys.stdin.readline())
+
+    solution(in_n)
