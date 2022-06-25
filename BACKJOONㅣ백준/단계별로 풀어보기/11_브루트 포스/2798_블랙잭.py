@@ -1,27 +1,4 @@
-def solution():
-
-    from itertools import combinations
-
-    input_n, input_m = map(int, input().split())
-
-    arr_n = list(map(int, input().split()))
-
-    combination_n = list(combinations(arr_n, 3))
-
-    mini_n = int(1e9)
-
-    answer = []
-
-    for a in combination_n:
-
-        if 0 <= input_m - sum(a) < mini_n:
-            mini_n = input_m - sum(a)
-            answer = a
-
-    print(sum(answer))
-
-
-def solution_2(N, M, numbers):
+def solution(N, M, numbers):
 
     answer = 0
 
@@ -37,6 +14,26 @@ def solution_2(N, M, numbers):
     return answer
 
 
+# # 조합을 활용한 풀이법
+# def solution(N, M, numbers):
+#
+#     from itertools import combinations
+#
+#     combination_n = list(combinations(numbers, 3))
+#
+#     mini_n = int(1e9)
+#
+#     answer = []
+#
+#     for a in combination_n:
+#
+#         if 0 <= M - sum(a) < mini_n:
+#             mini_n = M - sum(a)
+#             answer = a
+#
+#     print(sum(answer))
+
+
 if __name__ == "__main__":
 
     import sys
@@ -44,5 +41,5 @@ if __name__ == "__main__":
     in_n, in_m = map(int, sys.stdin.readline().split())
     in_l = list(map(int, sys.stdin.readline().split()))
 
-    print(solution_2(in_n, in_m, in_l))
+    print(solution(in_n, in_m, in_l))
 

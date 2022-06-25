@@ -1,6 +1,3 @@
-import sys
-
-
 def draw_stars(a_size):
 
     global map_x
@@ -26,12 +23,15 @@ def draw_stars(a_size):
 
 
 if __name__ == '__main__':
+
+    import sys
+
     # 3 <= input_x < 3 ** 8
-    input_x = int(sys.stdin.readline())
+    in_x = int(sys.stdin.readline())
 
-    map_x = [[' '] * input_x for _ in range(input_x)]
+    map_x = [[' '] * in_x for _ in range(in_x)]
 
-    draw_stars(input_x)
+    draw_stars(in_x)
 
     for a in map_x:
         for b in a:
