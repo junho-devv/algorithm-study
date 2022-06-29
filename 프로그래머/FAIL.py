@@ -21,7 +21,8 @@ def solution(num, stages):
     return answer
 
 
-s_num = int(input())
-s_list = list(map(int, input().split()))
+if __name__ == "__main__":
+    s_num = int(input())
+    s_list = list(map(int, input().split()))
 
-solution(s_num, s_list)
+    solution(s_num, s_list)
