@@ -16,8 +16,6 @@ def solution(num, stages):
     for a in a_result:
         answer.append(a[1])
 
-    print(answer)
-
     return answer
 
 
@@ -25,4 +23,4 @@ if __name__ == "__main__":
     s_num = int(input())
     s_list = list(map(int, input().split()))
 
-    solution(s_num, s_list)
+    print(solution(s_num, s_list))
