@@ -1,10 +1,6 @@
 import sys
 
 
-sys.setrecursionlimit(10000)
-way_4 = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-
-
 def move(para_x, para_y):
     visited_cabbage[para_x][para_y] = True
 
@@ -17,7 +13,11 @@ def move(para_x, para_y):
                 move(next_x, next_y)
 
 
+sys.setrecursionlimit(10000)
+way_4 = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+
 num_tc = int(sys.stdin.readline())
+
 for _ in range(num_tc):
     in_m, in_n, in_k = map(int, sys.stdin.readline().split())
     field_cabbage = [[0 for _ in range(in_m)] for _ in range(in_n)]
