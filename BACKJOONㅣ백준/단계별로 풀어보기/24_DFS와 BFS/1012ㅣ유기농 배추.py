@@ -2,6 +2,7 @@ import sys
 
 
 def move(para_x, para_y):
+
     visited_cabbage[para_x][para_y] = True
 
     for way in way_4:
@@ -14,6 +15,7 @@ def move(para_x, para_y):
 
 
 sys.setrecursionlimit(10000)
+
 way_4 = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 
 num_tc = int(sys.stdin.readline())
