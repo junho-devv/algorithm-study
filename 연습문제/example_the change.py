@@ -9,7 +9,7 @@ for coin in coin_types:
     n %= coin
 print(count)
 
-n =1260
+n = 1260
 count = 0
 
 for x in range(len(coin_types)):
@@ -30,4 +30,4 @@ for coin in coin_types:
 print(count)
 
 for letter in reversed("Junho"):
-  print(letter)
+    print(letter)
