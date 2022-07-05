@@ -22,7 +22,10 @@ def solution(num, stages):
 
 
 if __name__ == "__main__":
-    s_num = int(input())
+
+    import sys
+
+    s_num = int(sys.stdin.readline())
     s_list = list(map(int, input().split()))
 
     print(solution(s_num, s_list))
