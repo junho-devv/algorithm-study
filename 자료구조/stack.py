@@ -1,4 +1,4 @@
-class dsStack:
+class Stack:
     def __init__(self):
         self.items = []
 
@@ -17,7 +17,7 @@ class dsStack:
 
 if __name__ == "__main__":
 
-    stk = dsStack()
+    stk = Stack()
     print(stk)
 
     print(stk.is_empty())
