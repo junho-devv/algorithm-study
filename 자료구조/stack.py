@@ -2,6 +2,10 @@ class Stack:
     def __init__(self):
         self.items = []
 
+    def __len__(self):
+        print("aaa", len(self.items))
+        return len(self.items)
+
     def push(self, item):
         self.items.append(item)
 
@@ -18,12 +22,11 @@ class Stack:
 if __name__ == "__main__":
 
     stk = Stack()
-    print(stk)
-
+    print(stk, "sss")
     print(stk.is_empty())
 
     stk.push(2)
     stk.push(3)
-
+    print("s", len(stk))
     print(stk.items)
     print(stk.top())
