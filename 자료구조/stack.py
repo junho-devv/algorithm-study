@@ -1,16 +1,29 @@
-# -*- coding: euc-kr -*-
+class dsStack:
+    def __init__(self):
+        self.items = []
 
-stack = []
+    def push(self, item):
+        self.items.append(item)
 
-# append() 와 pop() 함수를 통해 stack을 구현
-stack.append(5)
-stack.append(2)
-stack.append(7)
-stack.append(1)
-stack.pop()
-stack.append(4)
-stack.pop()
-stack.append(3)
+    def pop(self):
+        return self.items.pop()
 
-print(stack)
-print(stack[::-1])
+    def top(self):
+        return self.items[-1]
+
+    def is_empty(self):
+        return not self.items
+
+
+if __name__ == "__main__":
+
+    stk = dsStack()
+    print(stk)
+
+    print(stk.is_empty())
+
+    stk.push(2)
+    stk.push(3)
+
+    print(stk.items)
+    print(stk.top())
