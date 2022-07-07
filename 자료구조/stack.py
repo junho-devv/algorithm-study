@@ -3,7 +3,6 @@ class Stack:
         self.items = []
 
     def __len__(self):
-        print("aaa", len(self.items))
         return len(self.items)
 
     def push(self, item):
