@@ -21,7 +21,7 @@ class Stack:
 if __name__ == "__main__":
 
     stk = Stack()
-    print(stk, "sss")
+    print(stk, "ㅁ")
     print(stk.is_empty())
 
     stk.push(2)
@@ -29,3 +29,4 @@ if __name__ == "__main__":
     print("s", len(stk))
     print(stk.items)
     print(stk.top())
+    
