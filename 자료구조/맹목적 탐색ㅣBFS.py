@@ -1,23 +1,21 @@
 from collections import deque
 
 
-def bfs(graph, start, visited):
-
+def breadth_first_search(start):
+    # 맹목적 탐색의 하위 종류ㅣ너비 우선 탐색
     que = deque([start])
     visited[start] = True
 
     print(que)
 
     while que:
-
         v = que.popleft()
-        print(v, end = ' ')
+        print(v, end=' ')
 
-        for x in graph[v]:
-            
-            if not visited[x]:
-                que.append(x)
-                visited[x] = True
+        for node in graph[v]:
+            if not visited[node]:
+                que.append(node)
+                visited[node] = True
 
 
 graph = [
@@ -31,7 +29,6 @@ graph = [
     [2, 6, 8],
     [1, 7]
 ]
-
 visited = [False] * 9
 
-bfs(graph, 1, visited)
+breadth_first_search(1)

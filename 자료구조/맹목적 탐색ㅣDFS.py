@@ -1,12 +1,12 @@
-def search_dfs(graph, node, visited):
-
+def depth_first_search(node):
+    # 맹목적 탐색의 하위 종류ㅣ너비 우선 탐색
     visited[node] = True
 
-    print(node, end = ' ')
+    print(node, end=' ')
 
     for x in graph[node]:
         if not visited[x]:
-            search_dfs(graph, x, visited)
+            depth_first_search(x)
 
 
 graph = [
@@ -20,7 +20,6 @@ graph = [
     [2, 6, 8],
     [1, 7]
 ]
-
 visited = [False] * 9
 
-search_dfs(graph, 1, visited)
+depth_first_search(1)
