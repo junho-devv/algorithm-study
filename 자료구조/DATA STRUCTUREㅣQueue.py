@@ -1,6 +1,3 @@
-import sys
-
-
 que_1 = [_ for _ in range(10)]
 que_1.pop(0)
 
