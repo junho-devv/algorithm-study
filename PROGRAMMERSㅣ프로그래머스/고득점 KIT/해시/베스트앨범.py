@@ -9,7 +9,7 @@ def solution(genres, plays):
     for genre in sorted_genre:
         list_genre = [e[1] for e in sorted(dict_genre[genre], key=lambda _: (_[0], -_[1]), reverse=True)]
         answer += list_genre[:min(len(list_genre), 2)]
-    print(answer)
+
     return answer
 
 
@@ -17,7 +17,7 @@ if __name__ == '__main__':
     in_g = ["classic", "pop", "classic", "classic", "pop"]
     in_p = [500, 600, 150, 800, 2500]
 
-    solution(in_g, in_p)
+    print(solution(in_g, in_p))
 
     in_a = [["a", 2], ["b", 3], ["c", 10]]
     print(sum(map(lambda g: g[1], in_a)))
