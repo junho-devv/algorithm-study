@@ -4,6 +4,7 @@ def solution(genres, plays):
     dict_genre = {e: [] for e in set(genres)}
     for genre, play, idx in zip(genres, plays, range(len(plays))):
         dict_genre[genre].append([play, idx])
+
     sorted_genre = sorted(list(dict_genre.keys()), key=lambda d: sum(map(lambda g: g[0], dict_genre[d])), reverse=True)
 
     for genre in sorted_genre:
