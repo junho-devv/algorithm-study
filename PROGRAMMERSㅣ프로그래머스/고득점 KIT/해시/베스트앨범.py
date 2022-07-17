@@ -14,7 +14,8 @@ def solution(genres, plays):
     return answer
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+
     in_g = ["classic", "pop", "classic", "classic", "pop"]
     in_p = [500, 600, 150, 800, 2500]
 
