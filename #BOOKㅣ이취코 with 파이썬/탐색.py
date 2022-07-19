@@ -1,9 +1,3 @@
-def sequential_search(num, tar, arr):
-    for x in range(num):
-        if arr[x] == tar:
-            return x + 1
-
-
 def binary_search(arr, tar, start, end):
 
     while start <= end:
