@@ -1,13 +1,16 @@
-n = int(input())
+if __name__ == "__main__":
 
-count = 0
+    import sys
 
-for hour in range(n+1):
-    for min in range(60):
-        for sec in range(60):
+    in_n = int(sys.stdin.readline())
 
-            if '3' in str(hour) + str(min) + str(sec):
-                count += 1
+    count = 0
 
-print(count)
-print("æ»≥Á«œººø‰")
+    for h in range(in_n + 1):
+        for m in range(60):
+            for s in range(60):
+
+                if '3' in str(h) + str(m) + str(s):
+                    count += 1
+
+    print(count)
