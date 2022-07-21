@@ -1,16 +1,21 @@
-num = int(input())
+if __name__ == "__main__":
 
-table = [0] * (num + 1)
+    import sys
 
-for x in range(2, num + 1):
+    in_n = int(sys.stdin.readline())
 
-    table[x] = table[x-1] + 1
+    dynamic_table = [0] * (in_n + 1)
 
-    if x % 2 == 0:
-        table[x] = min(table[x], table[x // 2] + 1)
-    if x % 3 == 0:
-        table[x] = min(table[x], table[x // 3] + 1)
-    if x % 5 == 0:
-        table[x] = min(table[x], table[x // 5] + 1)
+    for x in range(2, in_n + 1):
 
-print(table[num])
+        dynamic_table[x] = dynamic_table[x - 1] + 1
+
+        if x % 2 == 0:
+            dynamic_table[x] = min(dynamic_table[x], dynamic_table[x // 2] + 1)
+        if x % 3 == 0:
+            dynamic_table[x] = min(dynamic_table[x], dynamic_table[x // 3] + 1)
+        if x % 5 == 0:
+            dynamic_table[x] = min(dynamic_table[x], dynamic_table[x // 5] + 1)
+
+    print(dynamic_table[in_n])
+
