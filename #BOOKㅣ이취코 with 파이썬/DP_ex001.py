@@ -18,4 +18,3 @@ if __name__ == "__main__":
             dynamic_table[x] = min(dynamic_table[x], dynamic_table[x // 5] + 1)
 
     print(dynamic_table[in_n])
-
