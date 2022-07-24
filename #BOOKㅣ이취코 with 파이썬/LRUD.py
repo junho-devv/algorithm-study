@@ -1,14 +1,13 @@
 import sys
 
 n = int(sys.stdin.readline())
-
-x, y = 1, 1
-
 plans = sys.stdin.readline().split()
+
 direction = ['L', 'R', 'U', 'D']
 xDirection = [-1, 1, 0, 0]
 yDirection = [0, 0, -1, 1]
 
+x, y = 1, 1
 
 for plan in plans:
 
