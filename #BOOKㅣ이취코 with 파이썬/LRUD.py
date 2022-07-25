@@ -10,9 +10,7 @@ yDirection = [0, 0, -1, 1]
 x, y = 1, 1
 
 for plan in plans:
-
     for i in range(len(direction)):
-
         if plan == direction[i]:
             xTemp = x + xDirection[i]
             yTemp = y + yDirection[i]
