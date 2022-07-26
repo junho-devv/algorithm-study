@@ -13,8 +13,10 @@ def dynamic_fibonacci(n):
 
     if n == 1 or n == 2:
         return 1
+
     elif d[n] != 0:
         return d[n]
+
     else:
         d[n] = dynamic_fibonacci(n-1) + dynamic_fibonacci(n-2)
         return d[n]
