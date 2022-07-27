@@ -1,5 +1,4 @@
-from random import randint
-import time
+
 
 array = []
 
@@ -30,3 +29,11 @@ print("internal sorting : ", end_time - start_time)
 
 for letter in "Junho":
   print(letter)
+
+
+if __name__ == "__main__":
+
+  from random import randint
+  import time
+
+  int(sys.stdin.readline())
