@@ -32,7 +32,7 @@ while True:
     if d[nx][ny] == 0 and mapArr[nx][ny] == 0:
         d[nx][ny] = 1
         x = nx
-        y =ny
+        y = ny
         count += 1
         turn_time = 0
         continue
