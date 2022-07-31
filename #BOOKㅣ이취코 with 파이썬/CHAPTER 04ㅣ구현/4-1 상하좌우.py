@@ -21,4 +21,3 @@ for plan in plans:
     x, y = xTemp, yTemp
 
 print(x, y)
-print(xTemp, yTemp)
