@@ -1,6 +1,5 @@
 # 2차원 리스트 90도 회전
 def rotate_a_matrix_by_90_degree(a_list):
-
     # 행의 개수, 세로수
     row_len = len(a_list)
     # 열의 개수, 가로수
@@ -17,7 +16,6 @@ def rotate_a_matrix_by_90_degree(a_list):
 
 # 2차원 리스트 180도 회전
 def rotate_a_matrix_by_180_degree(a_list):
-
     # 행의 개수, 세로수
     row_len = len(a_list)
     # 열의 개수, 가로수
