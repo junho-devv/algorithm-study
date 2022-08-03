@@ -31,6 +31,7 @@ def rotate_a_matrix_by_180_degree(a_list):
 
 
 def check_1(new_lock):
+
     lock_length = len(new_lock) // 3
 
     for x in range(lock_length, lock_length * 2):
