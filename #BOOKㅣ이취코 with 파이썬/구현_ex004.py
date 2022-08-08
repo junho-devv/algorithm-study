@@ -76,7 +76,9 @@ def solution(key, lock):
     return answer
 
 
-a_key = [[0, 0, 0], [1, 0, 0], [0, 1, 1]]
-a_lock = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
+if __name__ == "__main__":
 
-print(solution(a_key, a_lock))
+    a_key = [[0, 0, 0], [1, 0, 0], [0, 1, 1]]
+    a_lock = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
+
+    print(solution(a_key, a_lock))
