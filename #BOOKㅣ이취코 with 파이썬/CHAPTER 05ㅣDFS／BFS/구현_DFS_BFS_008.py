@@ -17,6 +17,7 @@ robot_right = (1, 0)
 
 
 def get_next_pos(pos, temp_board):
+
     next_pos = []
     pos = list(pos)
     left_x, left_y, right_x, right_y = pos[0][0], pos[0][1], pos[1][0], pos[1][1]
