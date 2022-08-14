@@ -48,6 +48,7 @@ def get_next_pos(pos, temp_board):
 
 
 def solution():
+
     answer = 0
 
     temp_board = [[1] * (b_size + 2) for _ in range(b_size + 2)]
