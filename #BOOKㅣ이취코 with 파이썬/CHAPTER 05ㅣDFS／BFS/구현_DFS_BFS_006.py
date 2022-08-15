@@ -1,4 +1,6 @@
 # 감시 피하기
+import sys
+
 m_size = int(input())
 m_list = []
 for _ in range(m_size):
