@@ -1,7 +1,7 @@
 # 감시 피하기
 import sys
 
-m_size = int(input())
+m_size = int(sys.stdin.readline())
 m_list = []
 for _ in range(m_size):
     m_list.append(list(map(str, input().split())))
