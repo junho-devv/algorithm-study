@@ -15,6 +15,6 @@ if __name__ == "__main__":
 
     import sys
 
-    in_n = 1260
+    in_n = int(sys.stdin.readline())
 
     print(solution(in_n))
