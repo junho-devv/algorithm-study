@@ -14,3 +14,7 @@ for x in range(n):
     result = max(result, min_value)
 
 print(result)
+
+if __name__ == "__main__":
+
+    import sys
