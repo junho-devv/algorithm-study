@@ -1,10 +1,6 @@
-if __name__ == "__main__":
+def solution(n, m):
 
-    import sys
-
-    n, m = map(int, sys.stdin.readline().split())
-
-    result = 0
+    answer = 0
 
     for x in range(n):
 
@@ -14,6 +10,15 @@ if __name__ == "__main__":
         for y in data:
             min_value = min(y, min_value)
 
-        result = max(result, min_value)
+        result = max(answer, min_value)
 
-    print(result)
+    return answer
+
+
+if __name__ == "__main__":
+
+    import sys
+
+    in_n, in_m = map(int, sys.stdin.readline().split())
+
+    print(solution(in_n, in_m))
