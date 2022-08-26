@@ -10,7 +10,7 @@ def solution(n, m):
         for y in data:
             min_value = min(y, min_value)
 
-        result = max(answer, min_value)
+        answer = max(answer, min_value)
 
     return answer
 
