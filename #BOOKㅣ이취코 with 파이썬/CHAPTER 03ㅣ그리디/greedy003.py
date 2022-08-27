@@ -5,7 +5,7 @@ def solution(n, m):
     for x in range(n):
 
         data = list(map(int, input().split()))
-        min_value = float('inf')
+        min_value = int(1e9)
 
         for y in data:
             min_value = min(y, min_value)
