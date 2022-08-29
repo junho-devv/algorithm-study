@@ -1,5 +1,6 @@
 def solution(n, k):
-    count = 0
+
+    answer = 0
 
     while True:
         if n == 1:
@@ -7,13 +8,13 @@ def solution(n, k):
 
         if n % k == 0:
             n /= k
-            count += 1
+            answer += 1
 
         else:
             n -= 1
-            count += 1
+            answer += 1
 
-    return count
+    return answer
 
 
 if __name__ == "__main__":
