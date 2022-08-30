@@ -9,7 +9,6 @@ def solution(n, k):
         if n % k == 0:
             n /= k
             answer += 1
-
         else:
             n -= 1
             answer += 1
