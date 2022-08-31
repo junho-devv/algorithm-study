@@ -19,11 +19,6 @@ def solution(city, roads, visited, distances):
 
 c_num, r_num, s_path, c_start = map(int, input().split())
 
-# road_list = []
-#
-# for _ in range(r_num):
-#     road_list.append(list(map(int, input().split())))
-
 road_list = [[] for _ in range(c_num + 1)]
 
 for _ in range(r_num):
