@@ -38,12 +38,12 @@ que = deque([c_start])
 while que:
     now = que.popleft()
 
-    for next_city in road_list[now]:
+    for road in road_list[now]:
 
-        if road_distance[next_city] == -1:
+        if road_distance[road] == -1:
 
-            road_distance[next_city] = road_distance[now] + 1
-            que.append(next_city)
+            road_distance[road] = road_distance[now] + 1
+            que.append(road)
 
 check = False
 for i in range(1, c_num + 1):
