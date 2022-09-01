@@ -93,4 +93,3 @@ def setting(data):
 result = sorted(arr005, key=setting)
 
 print(result)
-
