@@ -18,8 +18,10 @@ def binary_search(arr, tar, start, end):
 
 if __name__ == "__main__":
 
-    n, target = map(int, input().split())
-    aList = list(map(int, input().split()))
+    import sys
+
+    n, target = map(int, sys.stdin.readline().split())
+    aList = list(map(int, sys.stdin.readline().split()))
 
     aResult = binary_search(aList, target, 0, n - 1)
 
