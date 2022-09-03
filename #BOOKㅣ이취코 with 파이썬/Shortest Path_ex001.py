@@ -25,4 +25,3 @@ if distance >= INF:
     print("-1")
 else:
     print(distance)
-
