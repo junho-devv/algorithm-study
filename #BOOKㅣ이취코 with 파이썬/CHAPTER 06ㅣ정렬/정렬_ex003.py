@@ -1,9 +1,11 @@
-n, k = map(int, input().split())
+import sys
+
+n, k = map(int, sys.stdin.readline().split())
 
 aList = [1, 3, 5, 2, 4]
 bList = [5, 5, 6, 6, 5]
 
-aList.sort()
+aList.sort(reverse=False)
 bList.sort(reverse=True)
 
 for i in range(k):
