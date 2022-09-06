@@ -2,13 +2,11 @@ def solution(n, m):
 
     answer = 0
 
-    for x in range(n):
+    for _ in range(n):
 
         data = list(map(int, input().split()))
-        min_value = int(1e9)
 
-        for y in data:
-            min_value = min(y, min_value)
+        min_value = min(data)
 
         answer = max(answer, min_value)
 
