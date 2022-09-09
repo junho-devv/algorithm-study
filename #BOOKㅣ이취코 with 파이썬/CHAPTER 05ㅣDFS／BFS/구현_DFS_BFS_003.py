@@ -53,5 +53,3 @@ print(search_in_depth_first(0))
 
 for i in range(m_size):
     print(temp_map[i])
-
-
