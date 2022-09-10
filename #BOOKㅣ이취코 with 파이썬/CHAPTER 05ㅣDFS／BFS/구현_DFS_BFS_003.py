@@ -1,3 +1,5 @@
+import sys
+
 m_size, v_num = map(int, input().split())
 
 v_map = []
