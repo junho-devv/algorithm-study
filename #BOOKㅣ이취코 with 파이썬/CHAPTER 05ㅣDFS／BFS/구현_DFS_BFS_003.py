@@ -1,6 +1,6 @@
 import sys
 
-m_size, v_num = map(int, input().split())
+m_size, v_num = map(int, sys.stdin.readline().split())
 
 v_map = []
 
