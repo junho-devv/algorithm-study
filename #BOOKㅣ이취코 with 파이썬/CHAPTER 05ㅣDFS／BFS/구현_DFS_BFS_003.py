@@ -1,23 +1,5 @@
 import sys
 
-m_size, v_num = map(int, sys.stdin.readline().split())
-
-v_map = []
-
-for i in range(m_size):
-    v_map.append(list(map(int, input().split())))
-
-temp_map = [[0] * m_size for _ in range(m_size)]
-for i in range(m_size):
-    for j in range(m_size):
-        temp_map[i][j] = v_map[i][j]
-
-v_sec, v_x, v_y = map(int, input().split())
-
-# 전염 방향 : 좌, 상, 우, 하
-x_direction = [1, 0, -1, 0]
-y_direction = [0, 1, 0, -1]
-
 
 def spread_virus(x, y):
 
@@ -50,6 +32,24 @@ def search_in_depth_first(sec):
 
     return search_in_depth_first(sec)
 
+
+m_size, v_num = map(int, sys.stdin.readline().split())
+
+v_map = []
+
+for i in range(m_size):
+    v_map.append(list(map(int, input().split())))
+
+temp_map = [[0] * m_size for _ in range(m_size)]
+for i in range(m_size):
+    for j in range(m_size):
+        temp_map[i][j] = v_map[i][j]
+
+v_sec, v_x, v_y = map(int, input().split())
+
+# 전염 방향 : 좌, 상, 우, 하
+x_direction = [1, 0, -1, 0]
+y_direction = [0, 1, 0, -1]
 
 print(search_in_depth_first(0))
 
