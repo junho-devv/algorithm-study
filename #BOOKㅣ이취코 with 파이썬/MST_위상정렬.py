@@ -1,16 +1,5 @@
 from collections import deque
 
-# 노드의 개수(num_n), 간선의 개수(num_e) 입력하기
-n_num, e_num = map(int, input().split())
-# in-degree(진입차수)
-in_degree = [0] * (n_num + 1)
-graph = [[] for _ in range(n_num + 1)]
-
-for _ in range(e_num):
-    a_node, b_node = map(int, input().split())
-    graph[a_node].append(b_node)
-    in_degree[b_node] += 1
-
 
 def topology_sort():
 
@@ -35,5 +24,16 @@ def topology_sort():
     for i in a_result:
         print(i, end=' ')
 
+
+# 노드의 개수(num_n), 간선의 개수(num_e) 입력하기
+n_num, e_num = map(int, input().split())
+# in-degree(진입차수)
+in_degree = [0] * (n_num + 1)
+graph = [[] for _ in range(n_num + 1)]
+
+for _ in range(e_num):
+    a_node, b_node = map(int, input().split())
+    graph[a_node].append(b_node)
+    in_degree[b_node] += 1
 
 topology_sort()
