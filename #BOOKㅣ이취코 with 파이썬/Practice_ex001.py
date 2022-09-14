@@ -1,3 +1,5 @@
+import sys
+
 a_num = int(input())
 
 adventurer_stat = list(map(int, input().split()))
@@ -15,4 +17,3 @@ while rest_num > 0:
     point += adventurer_stat[point]
 
 print(group_num)
-
