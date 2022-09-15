@@ -1,18 +1,19 @@
 def solution(n):
-
     answer = 0
-    
-    for x in range(2, n+1):
+
+    for x in range(2, n + 1):
         cnt = 0
 
-        for y in range(1, x+1):
+        for y in range(1, x + 1):
             if x % y == 0:
                 cnt += 1
 
         if cnt == 2:
-            answer += 1    
+            answer += 1
 
     return answer
+
+
 def solution002():
     val = input()
     row = int(val[1])
@@ -21,23 +22,24 @@ def solution002():
     # The earliest use of ord that I remember was in Pascal.
     # There, ord() returned the ordinal value of its argument. 
     # For characters this was defined as the ASCII code.
-    
+
     count = 0
 
     print(row, col)
-    
-    moves = [ (-2, -1), (-2, 1), (-1, -2), (-1, 2), (1, -2), (1, 2), (2, -1), (2, 1) ]
-    
+
+    moves = [(-2, -1), (-2, 1), (-1, -2), (-1, 2), (1, -2), (1, 2), (2, -1), (2, 1)]
+
     for move in moves:
         nRow = row + move[1]
         nCol = col + move[0]
-        
+
         if nCol > 0 and nRow > 0 and nCol < 9 and nRow < 9:
             count += 1
-    
+
     print(count)
 
-#n = int(input())
-#print(solution(n))
+
+# n = int(input())
+# print(solution(n))
 
 solution002()
