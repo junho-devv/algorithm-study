@@ -16,6 +16,5 @@ if __name__ == "__main__":
 
         return dp_table[num - 1]
 
-
     aResult = rob_foods(n)
     print(aResult)
