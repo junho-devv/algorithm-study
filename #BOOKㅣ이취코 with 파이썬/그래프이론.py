@@ -17,22 +17,26 @@ def union_parent(p_node_list, a_node, b_node):
         p_node_list[a_node] = b_node
 
 
-n_num, e_num = map(int, input().split())
-parent = [0] * (n_num + 1)
+if __name__ == "__main__":
 
-for i in range(1, n_num + 1):
-    parent[i] = i
+    import sys
 
-for e in range(e_num):
-    a, b = map(int, input().split())
-    union_parent(parent, a, b)
+    n_num, e_num = map(int, sys.stdin.readline().split())
+    parent = [0] * (n_num + 1)
 
-print("각 원소가 속한 집합: ", end='')
-for i in range(1, n_num + 1):
-    print(find_parent_node(parent, i), end=' ')
+    for i in range(1, n_num + 1):
+        parent[i] = i
 
-print()
+    for e in range(e_num):
+        a, b = map(int, input().split())
+        union_parent(parent, a, b)
 
-print("부모 테이블: ", end='')
-for i in range(1, n_num + 1):
-    print(parent[i], end=' ')
+    print("각 원소가 속한 집합: ", end='')
+    for i in range(1, n_num + 1):
+        print(find_parent_node(parent, i), end=' ')
+
+    print()
+
+    print("부모 테이블: ", end='')
+    for i in range(1, n_num + 1):
+        print(parent[i], end=' ')
