@@ -28,7 +28,7 @@ if __name__ == "__main__":
         parent[i] = i
 
     for e in range(e_num):
-        a, b = map(int, input().split())
+        a, b = map(int, sys.stdin.readline().split())
         union_parent(parent, a, b)
 
     print("각 원소가 속한 집합: ", end='')
