@@ -11,19 +11,20 @@ def binary_search(arr, target, start, end):
     return None
 
 
-n = int(input())
-nList = list(map(int, input().split()))
-m = int(input())
-mList = list(map(int, input().split()))
+if __name__ == "__main__":
+    n = int(input())
+    nList = list(map(int, input().split()))
+    m = int(input())
+    mList = list(map(int, input().split()))
 
-nList.sort()
+    nList.sort()
 
-rList = []
-for x in mList:
-    aResult = binary_search(nList, x, 0, n-1)
-    if aResult is None:
-        rList.append('No')
-    else:
-        rList.append('Yes')
+    rList = []
+    for x in mList:
+        aResult = binary_search(nList, x, 0, n - 1)
+        if aResult is None:
+            rList.append('No')
+        else:
+            rList.append('Yes')
 
-print(rList)
+    print(rList)
