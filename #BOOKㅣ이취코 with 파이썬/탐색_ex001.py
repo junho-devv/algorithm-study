@@ -12,6 +12,9 @@ def binary_search(arr, target, start, end):
 
 
 if __name__ == "__main__":
+
+    import sys
+
     n = int(input())
     nList = list(map(int, input().split()))
     m = int(input())
