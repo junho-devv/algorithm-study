@@ -15,10 +15,10 @@ if __name__ == "__main__":
 
     import sys
 
-    n = int(input())
-    nList = list(map(int, input().split()))
-    m = int(input())
-    mList = list(map(int, input().split()))
+    n = int(sys.stdin.readline())
+    nList = list(map(int, sys.stdin.readlinet().split()))
+    m = int(sys.stdin.readline())
+    mList = list(map(int, sys.stdin.readline().split()))
 
     nList.sort()
 
