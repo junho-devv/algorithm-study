@@ -8,6 +8,7 @@ def binary_search(arr, target, start, end):
             start = mid + 1
         else:
             end = mid - 1
+
     return None
 
 
