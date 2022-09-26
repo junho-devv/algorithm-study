@@ -20,6 +20,7 @@ if __name__ == "__main__":
 
     n = int(sys.stdin.readline())
     nList = list(map(int, sys.stdin.readlinet().split()))
+
     m = int(sys.stdin.readline())
     mList = list(map(int, sys.stdin.readline().split()))
 
