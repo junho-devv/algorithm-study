@@ -1,4 +1,6 @@
-num_a, num_b = map(int, input().split())
+import sys
+
+num_a, num_b = map(int, sys.stdin.readline().split())
 
 graph_a = []
 for _ in range(num_a):
