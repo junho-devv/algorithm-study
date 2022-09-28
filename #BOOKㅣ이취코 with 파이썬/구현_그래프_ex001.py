@@ -6,7 +6,7 @@ graph_a = []
 for _ in range(num_a):
     graph_a.append(list(map(int, input().split())))
 # 여행 계획에 포함된 여행지의 번호들을 입력하기
-graph_b = list(map(int, input().split()))
+graph_b = list(map(int, sys.stdin.readline().split()))
 
 
 def find_parent_node(a_list, a_node):
