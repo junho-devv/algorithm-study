@@ -1,4 +1,7 @@
-n, val = map(int, input().split())
+import sys
+
+
+n, val = map(int, sys.stdin.readline().split())
 
 aList = []
 dp_table = [100000] * (val+1)
