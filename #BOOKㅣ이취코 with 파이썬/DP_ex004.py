@@ -8,7 +8,7 @@ dp_table = [100000] * (val+1)
 dp_table[0] = 0
 
 for x in range(n):
-    aList.append(int(input()))
+    aList.append(int(sys.stdin.readline()))
     # dp_table[aList[x]] = 1
 
 # start = min(aList)
