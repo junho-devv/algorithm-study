@@ -4,7 +4,7 @@ import sys
 n, val = map(int, sys.stdin.readline().split())
 
 aList = []
-dp_table = [100000] * (val+1)
+dp_table = [100000] * (val + 1)
 dp_table[0] = 0
 
 for x in range(n):
