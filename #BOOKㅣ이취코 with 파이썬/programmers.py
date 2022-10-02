@@ -1,3 +1,6 @@
+import sys
+
+
 def solution(n):
     answer = 0
 
