@@ -18,7 +18,8 @@ def solution(n):
 
 
 def solution002():
-    val = input()
+
+    val = sys.stdin.readilne()
     row = int(val[1])
     col = int(ord(val[0])) - int(ord('a')) + 1
 
