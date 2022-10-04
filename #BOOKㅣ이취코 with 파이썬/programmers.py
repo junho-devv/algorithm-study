@@ -44,7 +44,4 @@ def solution002():
     print(count)
 
 
-# n = int(input())
-# print(solution(n))
-
 solution002()
