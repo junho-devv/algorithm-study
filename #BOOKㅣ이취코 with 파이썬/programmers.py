@@ -35,10 +35,10 @@ def solution002():
     moves = [(-2, -1), (-2, 1), (-1, -2), (-1, 2), (1, -2), (1, 2), (2, -1), (2, 1)]
 
     for move in moves:
-        nRow = row + move[1]
-        nCol = col + move[0]
+        n_row = row + move[1]
+        n_col = col + move[0]
 
-        if nCol > 0 and nRow > 0 and nCol < 9 and nRow < 9:
+        if 0 < n_col < 9 and 0 < n_row < 9:
             count += 1
 
     print(count)
