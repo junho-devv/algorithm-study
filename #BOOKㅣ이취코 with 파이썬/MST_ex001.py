@@ -1,3 +1,6 @@
+import sys
+
+
 s_num, f_num = map(int, input().split())
 
 team_graph = [0] * (s_num + 1)
