@@ -1,7 +1,7 @@
 import sys
 
 
-s_num, f_num = map(int, input().split())
+s_num, f_num = map(int, sys.stdin.readline().split())
 
 team_graph = [0] * (s_num + 1)
 
