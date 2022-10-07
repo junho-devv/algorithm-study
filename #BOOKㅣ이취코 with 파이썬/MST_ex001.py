@@ -4,7 +4,6 @@ import sys
 s_num, f_num = map(int, sys.stdin.readline().split())
 
 team_graph = [0] * (s_num + 1)
-
 for i in range(s_num + 1):
     team_graph[i] = i
 
