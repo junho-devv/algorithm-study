@@ -1,6 +1,9 @@
+import sys
+
+
 def solution():
 
-    character_point = input()
+    character_point = sys.stdin.readline()
 
     digit = len(character_point)
 
