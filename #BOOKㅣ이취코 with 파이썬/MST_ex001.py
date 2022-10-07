@@ -40,5 +40,6 @@ for _ in range(f_num):
 
         if a_student != b_student:
             print("NO")
+
         else:
             print("YES")
