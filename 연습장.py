@@ -1,6 +1,6 @@
 import sys
 
 
-in_n = int(sys.stdin.readline())
+if __name__ == "__main__":
 
-print(in_n)
+    in_n = int(sys.stdin.readline())
