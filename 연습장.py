@@ -9,3 +9,4 @@ if __name__ == "__main__":
 
     for _ in range(in_n):
         in_n += 1
+    print(in_n)
