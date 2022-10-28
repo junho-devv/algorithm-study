@@ -1,10 +1,11 @@
 def solution():
 
-    a_string = input()
+    a_string = sys.stdin.readline()
     b_string = ""
-    a_sum = 0
-    for i in range(len(a_string)):
 
+    a_sum = 0
+
+    for i in range(len(a_string)):
         if a_string[i].isalpha():
             b_string += a_string[i]
         elif a_string[i].isdigit():
@@ -14,7 +15,9 @@ def solution():
 
     print(b_string)
 
-    return
 
+if __name__ == "__main__":
 
-solution()
+    import sys
+
+    solution()
