@@ -1,31 +1,26 @@
-def binary_search(arr, tar, start, end):
-
-    while start <= end:
-
-        mid = (start + end) // 2
-
-        if arr[mid] == tar:
-            return mid + 1
-
-        elif arr[mid] > tar:
-            end = mid - 1
-
-        else:
-            start = mid + 1
-
-    return None
+import sys
 
 
-if __name__ == "__main__":
+def binary_search(array, target, start, end):
 
-    import sys
+    if start > end:
+        return None
 
-    n, target = map(int, sys.stdin.readline().split())
-    aList = list(map(int, sys.stdin.readline().split()))
+    mid = (start + end) // 2
 
-    aResult = binary_search(aList, target, 0, n - 1)
-
-    if aResult is None:
-        print("해당 값이 없습니다.")
+    if array[mid] == target:
+        return mid
+    elif array[mid] > target:
+        return binary_search(array, target, start, mid - 1)
     else:
-        print(aResult)
+        return binary_search(array, target, mid + 1, end)
+
+
+in_n, in_t = list(map(int, sys.stdin.readline().split()))
+in_a = list(map(int, sys.stdin.readline().split()))
+
+answer = binary_search(in_a, in_t, 0, in_n - 1)
+if answer is None:
+    print("원소가 존재하지 않습니다.")
+else:
+    print(answer + 1)
