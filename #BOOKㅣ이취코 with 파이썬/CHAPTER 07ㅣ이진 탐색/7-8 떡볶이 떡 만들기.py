@@ -16,7 +16,7 @@ def search_height(array, target, start, end):
             start = mid + 1
             answer = mid
 
-    print(answer)
+    return answer
 
 
 if __name__ == "__main__":
