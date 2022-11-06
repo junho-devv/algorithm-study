@@ -3,6 +3,7 @@ def search_height(array, target, start, end):
     answer = 0
 
     while start <= end:
+
         mid = (start + end) // 2
 
         leftover = 0
