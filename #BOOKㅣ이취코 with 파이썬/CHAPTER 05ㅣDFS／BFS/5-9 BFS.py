@@ -1,7 +1,7 @@
 def bfs(graph, start_node, visited):
 
     queue = deque([start_node])
-
+    visited[start_node] = True
 
     while queue:
         node = queue.popleft()
