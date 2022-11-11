@@ -57,8 +57,10 @@ def solution():
             temp_board[x + 1][y + 1] = board[x][y]
 
     start_pos = {(1, 1), (1, 2)}
+
     a_que = deque()
     a_que.append((start_pos, answer))
+
     visited_list = [a_robot]
 
     while a_que:
