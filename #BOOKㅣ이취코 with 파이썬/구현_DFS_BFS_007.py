@@ -19,7 +19,6 @@ def unite_countries(a, b, sector, a_union):
     a_que.append((a, b))
 
     a_union[a][b] = sector
-
     a_population = p_map[a][b]
     u_num = 1
 
