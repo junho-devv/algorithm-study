@@ -24,6 +24,7 @@ def unite_countries(a, b, sector, a_union):
 
     while a_que:
         x, y = a_que.popleft()
+
         # 4가지 방향을 확인
         for d in range(4):
             next_x = x + x_direction[d]
