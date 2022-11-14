@@ -51,6 +51,7 @@ def solution():
     while True:
         print("while")
         print(p_map)
+
         a_union = [[-1] * c_size for _ in range(c_size)]
         sector = 0
 
@@ -68,6 +69,7 @@ def solution():
             break
 
         answer += 1
+
     print(a_union)
     return answer
 
