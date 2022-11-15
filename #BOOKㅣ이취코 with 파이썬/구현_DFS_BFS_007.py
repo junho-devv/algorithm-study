@@ -71,6 +71,7 @@ def solution():
         answer += 1
 
     print(a_union)
+
     return answer
 
 
