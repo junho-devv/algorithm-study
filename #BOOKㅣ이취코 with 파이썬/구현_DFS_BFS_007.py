@@ -46,6 +46,7 @@ def unite_countries(a, b, sector, a_union):
 
 
 def solution():
+
     answer = 0
 
     while True:
