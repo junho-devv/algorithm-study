@@ -32,6 +32,7 @@ def unite_countries(a, b, sector, a_union):
 
             if 0 <= next_x < c_size and 0 <= next_y < c_size and a_union[next_x][next_y] == -1:
                 a_diff = abs(p_map[next_x][next_y] - p_map[x][y])
+
                 if a_left <= a_diff <= a_right:
                     a_que.append((next_x, next_y))
                     a_union[next_x][next_y] = sector
