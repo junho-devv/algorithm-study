@@ -1,6 +1,6 @@
 if __name__ == "__main__":
 
-    stack_a = []
+    stack_a = list()
 
     stack_a.append(5)
     stack_a.append(2)
