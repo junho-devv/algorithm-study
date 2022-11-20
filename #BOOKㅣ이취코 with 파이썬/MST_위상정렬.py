@@ -3,15 +3,13 @@ from collections import deque
 
 def topology_sort():
 
-    a_result = []
     a_que = deque()
-
     for i in range(1, n_num + 1):
         if in_degree[i] == 0:
             a_que.append(i)
 
+    a_result = []
     while a_que:
-
         now = a_que.popleft()
         a_result.append(now)
 
