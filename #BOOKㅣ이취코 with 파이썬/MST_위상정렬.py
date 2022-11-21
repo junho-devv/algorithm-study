@@ -26,9 +26,9 @@ def topology_sort():
 # 노드의 개수(num_n), 간선의 개수(num_e) 입력하기
 n_num, e_num = map(int, input().split())
 
+graph = [[] for _ in range(n_num + 1)]
 # in-degree(진입차수)
 in_degree = [0] * (n_num + 1)
-graph = [[] for _ in range(n_num + 1)]
 
 for _ in range(e_num):
     a_node, b_node = map(int, input().split())
