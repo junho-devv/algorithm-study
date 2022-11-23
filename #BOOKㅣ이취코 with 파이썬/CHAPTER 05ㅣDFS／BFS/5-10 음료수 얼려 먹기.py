@@ -26,10 +26,10 @@ if __name__ == "__main__":
     for _ in range(in_n):
         in_g.append(list(map(int, sys.stdin.readline())))
 
-    out_ = 0
+    out_1 = 0
     for n in range(in_n):
         for m in range(in_m):
             if dfs(n, m):
-                out_ += 1
+                out_1 += 1
 
-    print(out_)
+    print(out_1)
