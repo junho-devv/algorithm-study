@@ -33,6 +33,7 @@ in_degree = [0] * (n_num + 1)
 
 for _ in range(e_num):
     a_node, b_node = map(int, sys.stdin.readline().split())
+
     graph[a_node].append(b_node)
     in_degree[b_node] += 1
 
