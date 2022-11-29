@@ -3,7 +3,6 @@ import sys
 
 
 def topology_sort():
-
     a_que = deque()
     for i in range(1, n_num + 1):
         if in_degree[i] == 0:
