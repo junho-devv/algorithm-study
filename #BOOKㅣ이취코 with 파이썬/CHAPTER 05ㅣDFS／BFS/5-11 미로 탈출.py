@@ -31,4 +31,4 @@ if __name__ == "__main__":
 
     way_4 = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
-    print(search_bfs(0, 0,))
+    print(search_bfs(0, 0))
