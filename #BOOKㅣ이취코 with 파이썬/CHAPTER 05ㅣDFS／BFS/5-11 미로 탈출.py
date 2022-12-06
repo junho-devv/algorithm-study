@@ -2,6 +2,7 @@ def search_bfs(x, y):
 
     que = deque()
     que.append((x, y))
+
     while que:
         now_x, now_y = que.popleft()
 
