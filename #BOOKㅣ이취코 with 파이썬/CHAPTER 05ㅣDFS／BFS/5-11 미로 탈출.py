@@ -12,7 +12,6 @@ def search_bfs(x, y):
 
             if 0 <= next_x < in_n and 0 <= next_y < in_m:
                 if in_g[next_x][next_y] == 1:
-
                     in_g[next_x][next_y] = in_g[now_x][now_y] + 1
                     que.append((next_x, next_y))
 
