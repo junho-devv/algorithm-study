@@ -4,7 +4,7 @@ def solution(n, m):
 
     for _ in range(n):
 
-        data = list(map(int, input().split()))
+        data = list(map(int, sys.stdin.readline().split()))
 
         min_value = min(data)
 
