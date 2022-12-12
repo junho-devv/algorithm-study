@@ -1,3 +1,6 @@
+import sys
+
+
 def find_center_city(graph, x_house):
 
     if graph[x_house] != x_house:
@@ -17,7 +20,7 @@ def connect_two_houses(graph, x_house, y_house):
         graph[x] = y
 
 
-h_num, r_num = map(int, input().split())
+h_num, r_num = map(int, sys.stdin.readline().split())
 
 city_map = [0] * (h_num + 1)
 
