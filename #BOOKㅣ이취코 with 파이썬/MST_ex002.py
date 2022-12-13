@@ -30,7 +30,7 @@ for i in range(1, h_num + 1):
 city_road = []
 
 for _ in range(r_num):
-    a_house, b_house, m_cost = map(int, input().split())
+    a_house, b_house, m_cost = map(int, sys.stdin.readline().split())
     city_road.append([m_cost, a_house, b_house])
 
 city_road.sort()
