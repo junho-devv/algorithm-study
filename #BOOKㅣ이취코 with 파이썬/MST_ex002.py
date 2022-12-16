@@ -43,7 +43,5 @@ if __name__ == "__main__":
             connect_two_houses(city_map, city_road[i][1], city_road[i][2])
             min_cost.append(city_road[i][0])
 
-    max_cost = max(min_cost)
-
     print(city_map)
-    print(sum(min_cost) - max_cost)
+    print(sum(min_cost) - max(min_cost))
