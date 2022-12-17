@@ -1,8 +1,9 @@
 import heapq
+import sys
 
 INF = int(1e9)
 
-node, line = map(int, input().split())
+node, line = map(int, sys.stdin.readline().split())
 
 start_node = int(input())
 
