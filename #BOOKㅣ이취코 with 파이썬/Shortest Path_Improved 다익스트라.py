@@ -5,7 +5,7 @@ INF = int(1e9)
 
 node, line = map(int, sys.stdin.readline().split())
 
-start_node = int(input())
+start_node = int(sys.stdin.readline())
 
 graph = [[] for _ in range(node+1)]
 
