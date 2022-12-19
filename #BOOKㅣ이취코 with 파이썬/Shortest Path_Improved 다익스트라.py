@@ -12,7 +12,7 @@ graph = [[] for _ in range(node+1)]
 distance = [INF] * (node+1)
 
 for _ in range(line):
-    a, b, c = map(int, input().split())
+    a, b, c = map(int, sys.stdin.readline().split())
     graph[a].append([b, c])
 
 
