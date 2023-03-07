@@ -8,6 +8,7 @@ mv = list()
 for n in range(in_n):
     mv.append(int(sys.stdin.readline()))
 
+
 dpt = [0] + [MAX] * in_m
 
 for v in mv:
