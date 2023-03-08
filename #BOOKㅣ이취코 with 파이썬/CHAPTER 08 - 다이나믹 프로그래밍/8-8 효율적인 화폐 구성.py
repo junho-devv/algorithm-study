@@ -1,5 +1,6 @@
 import sys
 
+
 MAX = int(1e4) + 1
 
 in_n, in_m = map(int, sys.stdin.readline().split())
