@@ -22,7 +22,6 @@ def dijkstra(start_node):
     distance[start_node] = 0
 
     while que:
-
         min_d, now_node = heapq.heappop(que)
 
         if distance[now_node] < min_d:
