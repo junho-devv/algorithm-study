@@ -45,3 +45,5 @@ def solution002():
 
 
 solution002()
+
+sys.setrecursionlimit()
